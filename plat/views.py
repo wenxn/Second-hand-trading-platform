@@ -9,5 +9,4 @@ def delete_goods(request):
     return HttpResponse('delete_goods!')
 
 def home(request):
-
-    return HttpResponse('Welcome!')
+    return render(request, 'home.html')
