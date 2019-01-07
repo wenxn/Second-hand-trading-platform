@@ -25,3 +25,6 @@ class Post(models.Model):
     updated_at = models.DateTimeField(null=True)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     updated_by = models.ForeignKey(User, null=True,on_delete=models.CASCADE,related_name='+')
+
+    def __str__(self):
+        return self.message
