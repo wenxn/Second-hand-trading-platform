@@ -10,10 +10,13 @@ class Plat(models.Model):
 
 class Goods(models.Model):
     name = models.CharField(max_length=255)
+    description = models.CharField(max_length=100)
     last_updated = models.DateTimeField(auto_now_add=True)
     plat = models.ForeignKey(Plat, on_delete=models.CASCADE)
     starter = models.ForeignKey(User, on_delete=models.CASCADE)
     views = models.PositiveIntegerField(default=0)
+    price = models.CharField(max_length=100)
+    online = models.BooleanField(verbose_name="是否支持线上交易（包邮）", default=False)
 
     def __str__(self):
         return self.name

@@ -1,13 +1,32 @@
 {% extends 'base.html'%}
 
-{% block title %}创建新的闲置物品{% endblock %}
-
-{% block breadcrumb %}
-  <li class="breadcrumb-item active">New good</li>
-{% endblock %}
-
 {% block content %}
-  <form method="post" novalidate>
-    <button type="submit" class="btn btn-success">Post</button>
-  </form>
+    <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Cron Form</h3>
+            </div>
+            <form class="form-horizontal" href="/cron/add" method="post">
+            {% csrf_token %}
+              <div class="box-body ">
+                  {% for field in form %}
+                    <div class="form-group">
+                        <label for="{{ field.name }}" class="col-sm-2 control-label">{{ field.label }}</label>
+                        <div class="col-sm-8">
+                            {% if field.errors %}
+                            {{ field.errors.a }}
+                              <button type="button" class="btn btn-block btn-danger btn-xs">{{ field.errors }}</button>
+                            {% endif %}
+
+                            {{ field }}
+                        </div>
+                    </div>
+                  {% endfor %}
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-info pull-right">创建cron任务</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
 {% endblock %}
