@@ -2,15 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Plat(models.Model):
-    name = models.CharField(max_length=30, unique=True)
-    description = models.CharField(max_length=100)
+    plat_name = models.CharField(max_length=30, unique=True)
+    plat_description = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
 class Goods(models.Model):
-    name = models.CharField(max_length=255)
-    description = models.CharField(max_length=100)
+    good_name = models.CharField(max_length=255)
+    good_description = models.CharField(max_length=100)
     last_updated = models.DateTimeField(auto_now_add=True)
     plat = models.ForeignKey(Plat, on_delete=models.CASCADE)
     starter = models.ForeignKey(User, on_delete=models.CASCADE)

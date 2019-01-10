@@ -6,13 +6,11 @@ from plat import models
 
 
 # Create your views here.
-def plat_goods(request,pk):
-    goods = models.Goods.objects.get(pk=pk)
-    print(goods)
-    return render(request, 'goods.html', {'goods':goods,'pk':pk})
+def plat_goods(request):
+    goods = models.Goods.objects.filter()
+    return render(request, 'goods.html')
 
-def add_goods(request,pk):
-    plat = get_object_or_404(Plat, pk=pk)
+def add_goods(request):
     form = goods_form()
     if request.method == "POST":
         username = request.session['username']
@@ -28,11 +26,19 @@ def add_goods(request,pk):
             return redirect("/goods/")
         else:
             print(form.errors)
-    return render(request, 'add_goods.html', {'plat': plat,'form':form,'pk':pk})
+    return render(request, 'add_goods.html', {'form':form})
 
-def edit_goods(request,pk):
-    plat = get_object_or_404(Plat, pk=pk)
-    return render(request, 'edit_goods.html', {'plat': plat})
+def edit_goods(request):
+    form = goods_form()
+    if request.method == "POST":
+        form = goods_form(request.POST)
+        if form.is_valid():
+            v = models.Goods.objects.filter().update(**form.cleaned_data)
+            print("修改的行数：", v)
+            return redirect("goods.html")
+    return render(request, "edit_goods.html", {
+        'form': form,
+    })
 
 def del_goods(request):
     plat = get_object_or_404(Plat, pk=pk)

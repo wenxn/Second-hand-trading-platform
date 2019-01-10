@@ -21,11 +21,11 @@ class NewPlatForm(forms.ModelForm):
 class goods_form(ModelForm):
     class Meta:
         model = Goods
-        fields = ('name','description','plat','price','online')
+        fields = ('good_name','good_description','plat','price','online')
 
         widgets = {
-            'name': TextInput(attrs={"class":"special"}),
-            'description': TextInput(attrs={"class":"form-control"}),
+            'good_name': TextInput(attrs={"class":"special"}),
+            'good_description': TextInput(attrs={"class":"form-control"}),
             'plat': TextInput(attrs={"class":"special",}),
             'price': TextInput(attrs={"class": "form-control"}),
         }

@@ -3,9 +3,9 @@
 {% block content %}
     <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Cron Form</h3>
+              <h3 class="box-title">闲置表单</h3>
             </div>
-            <form class="form-horizontal" href="/cron/add" method="post">
+            <form class="form-horizontal" href="#" method="post">
             {% csrf_token %}
               <div class="box-body ">
                   {% for field in form %}
@@ -24,7 +24,7 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button type="submit" class="btn btn-info pull-right">创建cron任务</button>
+                <button type="submit" class="btn btn-info pull-right">创建闲置物品</button>
               </div>
               <!-- /.box-footer -->
             </form>
