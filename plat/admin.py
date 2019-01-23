@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Plat,Post,Goods
+from .models import Plat,Post,Good
 
 # Register your models here.
 admin.site.register(Plat)
 admin.site.register(Post)
-admin.site.register(Goods)
+admin.site.register(Good)

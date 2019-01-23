@@ -1,0 +1,202 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="cart-bg-overlay"></div>
+
+    <div class="right-side-cart-area">
+
+        <!-- Cart Button -->
+        <div class="cart-button">
+            <a href="#" id="rightSideCart"><img src="/static/plugins/essence%202/img/core-img/bag.svg" alt=""> <span>3</span></a>
+        </div>
+
+        <div class="cart-content d-flex">
+
+            <!-- Cart List Area -->
+            <div class="cart-list">
+                <!-- Single Cart Item -->
+                <div class="single-cart-item">
+                    <a href="#" class="product-image">
+                        <img src="/static/plugins/essence%202/img/product-img/product-1.jpg" class="cart-thumb" alt="">
+                        <!-- Cart Item Desc -->
+                        <div class="cart-item-desc">
+                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                            <span class="badge">Mango</span>
+                            <h6>Button Through Strap Mini Dress</h6>
+                            <p class="size">Size: S</p>
+                            <p class="color">Color: Red</p>
+                            <p class="price">$45.00</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Cart Item -->
+                <div class="single-cart-item">
+                    <a href="#" class="product-image">
+                        <img src="/static/plugins/essence%202/img/product-img/product-2.jpg" class="cart-thumb" alt="">
+                        <!-- Cart Item Desc -->
+                        <div class="cart-item-desc">
+                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                            <span class="badge">Mango</span>
+                            <h6>Button Through Strap Mini Dress</h6>
+                            <p class="size">Size: S</p>
+                            <p class="color">Color: Red</p>
+                            <p class="price">$45.00</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Cart Item -->
+                <div class="single-cart-item">
+                    <a href="#" class="product-image">
+                        <img src="/static/plugins/essence%202/img/product-img/product-3.jpg" class="cart-thumb" alt="">
+                        <!-- Cart Item Desc -->
+                        <div class="cart-item-desc">
+                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                            <span class="badge">Mango</span>
+                            <h6>Button Through Strap Mini Dress</h6>
+                            <p class="size">Size: S</p>
+                            <p class="color">Color: Red</p>
+                            <p class="price">$45.00</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="cart-amount-summary">
+
+                <h2>Summary</h2>
+                <ul class="summary-table">
+                    <li><span>subtotal:</span> <span>$274.00</span></li>
+                    <li><span>delivery:</span> <span>Free</span></li>
+                    <li><span>discount:</span> <span>-15%</span></li>
+                    <li><span>total:</span> <span>$232.00</span></li>
+                </ul>
+                <div class="checkout-btn mt-100">
+                    <a href="#" class="btn essence-btn">我的闲置</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Right Side Cart End ##### -->
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb_area bg-img" style="background-image: url(/static/plugins/essence%202/img/bg-img/breadcumb.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="page-title text-center">
+                        <h2>我的闲置</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="checkout_area section-padding-80">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-md-6">
+                    <div class="checkout_details_area mt-50 clearfix">
+
+                        <div class="cart-page-heading mb-30">
+                            <h5>发布闲置</h5>
+                        </div>
+
+                        <form method="post" href="add.html">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="good_name">闲置名称 <span>*</span></label>
+                                    <input type="text" class="form-control" value="" name="good_name" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="good_description">闲置描述</label>
+                                    <input type="text" class="form-control" value="" name="good_description">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="plat">闲置类型 <span>*</span></label>
+                                    <select class="w-100" id="plat" name="plat">
+                                        <option value="1">书籍教材</option>
+                                        <option value="2">电子设备</option>
+                                        <option value="3">生活用品</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="price">闲置价格 <span>*</span></label>
+                                    <input type="text" class="form-control mb-3" id="street_address" value="" name="price">
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="custom-control custom-checkbox d-block mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="online" name="online">
+                                        <label class="custom-control-label" for="online">支持包邮</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-block mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="lower" name="lower">
+                                        <label class="custom-control-label" for="lower">支持议价</label>
+                                    </div>
+                                </div>
+                                <div class="box-footer">
+                <button type="submit" class="btn btn-info pull-right">提交</button>
+              </div>
+                            </div>
+                        </form>
+                        <div class="box-body ">
+              </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
+                    <div class="order-details-confirmation">
+
+                        <div class="cart-page-heading">
+                            <h5>闲置列表</h5>
+                            <p>The Details</p>
+                        </div>
+
+                        <ul class="order-details-form mb-5">
+                            <li><span>我发布的</span> <span>5</span></li>
+                            <li><span>我收藏的</span> <span>1</span></li>
+                            <li><span>我买到的</span> <span>2</span></li>
+                            <li><span>我卖出的</span> <span>1</span></li>
+                        </ul>
+
+
+                        <div id="accordion" role="tablist" class="mb-4">
+
+                            <div class="card">
+                                <div class="card-header" role="tab" id="headingTwo">
+                                    <h6 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-circle-o mr-3"></i> 支持微信支付 </a>
+                                    </h6>
+                                </div>
+                                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>b</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="headingThree">
+                                    <h6 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i class="fa fa-circle-o mr-3"></i>支持支付宝支付</a>
+                                    </h6>
+                                </div>
+                                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>a</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn essence-btn">去看其他人的闲置</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,13 +1,2 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 
-{% block content %}
-    <section class="content">
-
-        {% if user.is_authenticated %}
-    <h1>{{ user.username }}!Welcome to GDUT FleaMarket! </h1>
-    {% else %}
-    <h1>Welcome to GDUT FleaMarket!</h1>
-    {% endif %}
-
-    </section>
-{% endblock %}

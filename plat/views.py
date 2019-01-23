@@ -1,20 +1,22 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from django.http import HttpResponse
-from .models import Plat,Goods
+from .models import Plat,Good
 from .forms import goods_form
 from plat import models
+from accounts.models import UserInfo
 
 
 # Create your views here.
 def plat_goods(request):
-    goods = models.Goods.objects.filter()
+    #plat = models.Plat.objects.all(plat_name=plat_name)
     return render(request, 'goods.html')
 
 def add_goods(request):
     form = goods_form()
     if request.method == "POST":
-        username = request.session['username']
-        user_id = models.User.objects.filter(username=username).first()
+        print(request.POST)
+        user_id = UserInfo.objects.filter(username='admin').first()
+        print(user_id)
         data = {
             'starter': user_id,
         }
@@ -22,18 +24,18 @@ def add_goods(request):
 
         if form.is_valid():
             data.update(form.cleaned_data)
-            v = models.Goods.objects.create(**data)
-            return redirect("/goods/")
+            v = models.Good.objects.create(**data)
+            return redirect("/plat/")
         else:
             print(form.errors)
-    return render(request, 'add_goods.html', {'form':form})
+    return render(request, 'add.html', {'form':form})
 
 def edit_goods(request):
     form = goods_form()
     if request.method == "POST":
         form = goods_form(request.POST)
         if form.is_valid():
-            v = models.Goods.objects.filter().update(**form.cleaned_data)
+            v = models.Good.objects.filter().update(**form.cleaned_data)
             print("修改的行数：", v)
             return redirect("goods.html")
     return render(request, "edit_goods.html", {

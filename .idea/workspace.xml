@@ -2,17 +2,333 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f373545c-8c1a-42c6-9703-3bef21895197" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static/images/book.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/gdut.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/logo-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/phone.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/css/material-dashboard-rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/css/material-dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/css/material-dashboard.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/css/material-dashboard.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/demo/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/demo/demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/demo/docs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/img/apple-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/img/cover.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/img/faces/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/img/faces/card-profile1-square.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/img/faces/card-profile2-square.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/img/faces/marc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/img/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/img/mask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/img/new_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/img/sidebar-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/img/sidebar-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/img/sidebar-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/img/sidebar-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/core/bootstrap-material-design.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/core/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/core/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/material-dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/material-dashboard.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/material-dashboard.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/arrive.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/bootstrap-datetimepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/bootstrap-notify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/bootstrap-selectpicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/bootstrap-tagsinput.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/chartist.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/fullcalendar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/jasny-bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/jquery-jvectormap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/jquery.bootstrap-wizard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/jquery.tagsinput.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/jquery.validate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/moment.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/nouislider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/perfect-scrollbar.jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/js/plugins/sweetalert2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_alerts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_cards.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_checkboxes.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_core-bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_example-pages.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_fixed-plugin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_footers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_headers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_images.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_info-areas.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_input-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_misc.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_popover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_popups.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_radios.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_responsive.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_ripples.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_sidebar-and-main-panel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_social-buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_tabs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_togglebutton.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_tooltip.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_breadcrumb.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_button-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_carousel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_close.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_code.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_custom-forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_functions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_images.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_input-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_jumbotron.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_media.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_modal.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_popover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_print.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_progress.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_root.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_tooltip.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_transitions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/bootstrap-grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/bootstrap-reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_background-variant.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_border-radius.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_box-shadow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_breakpoints.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_caret.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_float.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_gradients.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_grid-framework.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_hover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_image.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_lists.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_nav-divider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_navbar-align.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_reset-text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_resize.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_size.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_table-row.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_text-emphasis.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_text-hide.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_text-truncate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_transition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/mixins/_visibility.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/utilities/_align.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/utilities/_background.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/utilities/_borders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/utilities/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/utilities/_display.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/utilities/_embed.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/utilities/_flex.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/utilities/_float.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/utilities/_position.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/utilities/_screenreaders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/utilities/_sizing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/utilities/_spacing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/utilities/_text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/bootstrap/scss/utilities/_visibility.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/cards/_card-plain.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/cards/_card-profile.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/cards/_card-stats.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_animations.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_breakpoints.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_chartist.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_colored-shadows.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_drawer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_hover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_navbar-colors.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_navs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_sidebar-color.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_transparency.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/mixins/_vendor-prefixes.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/plugins/_animate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/plugins/_chartist.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/plugins/_perfect-scrollbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_body.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_bootstrap-material-design-base.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_bootstrap-material-design.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_brand.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_code.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_colors-map.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_colors.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_custom-forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_drawer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_menu.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_modals.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_shadow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_snackbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_spacing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_state.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_tooltip.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/assets/scss/material-dashboard/variables/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/.sass-cache/23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84/_mixin.scssc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/.sass-cache/23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84/_responsive.scssc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/.sass-cache/23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84/_theme_color.scssc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/.sass-cache/23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84/_variables.scssc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/.sass-cache/23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84/style.scssc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/css/classy-nav.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/css/core-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/css/core-style.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/css/jquery-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/css/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/css/nice-select.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/css/owl.carousel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/fonts/classy.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/fonts/classy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/fonts/classy.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/fonts/classy.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/bg-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/bg-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/bg-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/bg-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/bg-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/bg-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/bg-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/bg-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/blog1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/blog2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/blog3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/blog4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/blog5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/blog6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/breadcumb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/breadcumb2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/rp1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/rp2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/rp3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/bg-img/rp4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/arrow-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/arrow-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/arrow-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/arrow-up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/bag.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/brand1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/brand2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/brand3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/brand4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/brand5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/brand6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/cancel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/heart-fill.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/heart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/logo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/long-arrow-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/long-arrow-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/pin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/user.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/core-img/view.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/product-img/product-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/product-img/product-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/product-img/product-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/product-img/product-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/product-img/product-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/product-img/product-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/product-img/product-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/product-img/product-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/product-img/product-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/product-img/product-big-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/product-img/product-big-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/img/product-img/product-big-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/js/active.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/js/classy-nav.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/js/jquery/jquery-2.2.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/js/map-active.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/js/plugins.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/js/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/scss/_mixin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/scss/_responsive.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/scss/_theme_color.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugins/essence 2/scss/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/add_bak.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plat/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/plat/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plat/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/plat/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plat/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/plat/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/plat/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plat/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/plat/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plat/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/plat/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/add_goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_goods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/add_goods.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/edit_goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit_goods.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/goods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,97 +373,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plat/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-223">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plat/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/secondhand_platform/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plat/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="71" column="54" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/goods.html">
+        <entry file="file://$PROJECT_DIR$/templates/signup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+            <state relative-caret-position="311">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/edit_goods.html">
+        <entry file="file://$PROJECT_DIR$/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-271">
-              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plat/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plat/tests.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plat/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="43">
+              <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="43" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -163,6 +402,7 @@
       <find>adminlte</find>
       <find>sign</find>
       <find>login</find>
+      <find>checkout</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,29 +415,38 @@
         <option value="$PROJECT_DIR$/account/views.py" />
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/templates/home1.html" />
-        <option value="$PROJECT_DIR$/secondhand_platform/settings.py" />
-        <option value="$PROJECT_DIR$/accounts/forms.py" />
-        <option value="$PROJECT_DIR$/accounts/urls.py" />
-        <option value="$PROJECT_DIR$/accounts/views.py" />
-        <option value="$PROJECT_DIR$/plat/admin.py" />
         <option value="$PROJECT_DIR$/secondhand_platform/urls.py" />
-        <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/templates/homepage.html" />
         <option value="$PROJECT_DIR$/templates/add_goods.html" />
-        <option value="$PROJECT_DIR$/templates/edit_goods.html" />
+        <option value="$PROJECT_DIR$/a.py" />
+        <option value="$PROJECT_DIR$/templates/add_good.html" />
+        <option value="$PROJECT_DIR$/accounts/admin.py" />
+        <option value="$PROJECT_DIR$/plat/admin.py" />
+        <option value="$PROJECT_DIR$/templates/homepage.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/checkout.html" />
+        <option value="$PROJECT_DIR$/templates/goods.html" />
         <option value="$PROJECT_DIR$/plat/urls.py" />
-        <option value="$PROJECT_DIR$/plat/views.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/plat/models.py" />
         <option value="$PROJECT_DIR$/plat/forms.py" />
-        <option value="$PROJECT_DIR$/templates/goods.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/add-bak.html" />
+        <option value="$PROJECT_DIR$/templates/edit_goods.html" />
+        <option value="$PROJECT_DIR$/plat/views.py" />
+        <option value="$PROJECT_DIR$/templates/add.html" />
+        <option value="$PROJECT_DIR$/accounts/urls.py" />
+        <option value="$PROJECT_DIR$/requirement.txt" />
+        <option value="$PROJECT_DIR$/secondhand_platform/settings.py" />
+        <option value="$PROJECT_DIR$/accounts/forms.py" />
+        <option value="$PROJECT_DIR$/accounts/views.py" />
+        <option value="$PROJECT_DIR$/accounts/models.py" />
+        <option value="$PROJECT_DIR$/templates/login.html" />
+        <option value="$PROJECT_DIR$/templates/signup.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
-    <option name="height" value="794" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -213,6 +462,17 @@
             <path>
               <item name="Second-hand-trading-platform" type="b2602c69:ProjectViewProjectNode" />
               <item name="Second-hand-trading-platform" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Second-hand-trading-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Second-hand-trading-platform" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Second-hand-trading-platform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Second-hand-trading-platform" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Second-hand-trading-platform" type="b2602c69:ProjectViewProjectNode" />
@@ -238,18 +498,6 @@
             <path>
               <item name="Second-hand-trading-platform" type="b2602c69:ProjectViewProjectNode" />
               <item name="Second-hand-trading-platform" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Second-hand-trading-platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Second-hand-trading-platform" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Second-hand-trading-platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Second-hand-trading-platform" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -261,6 +509,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -336,23 +585,27 @@
       <workItem from="1546730989884" duration="13082000" />
       <workItem from="1546910070756" duration="3238000" />
       <workItem from="1546953400559" duration="4911000" />
-      <workItem from="1547083037870" duration="2342000" />
+      <workItem from="1547083037870" duration="2753000" />
+      <workItem from="1547171064439" duration="542000" />
+      <workItem from="1548036459068" duration="5351000" />
+      <workItem from="1548122217514" duration="27534000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46198000" />
+    <option name="totallyTimeSpent" value="80036000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="794" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15879828" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16523606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Console" weight="0.32891566" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32765958" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32763532" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32627738" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29759037" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -361,7 +614,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32905984" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32763532" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.19638555" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -480,162 +733,246 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/home.html" />
+    <entry file="file://$PROJECT_DIR$/plat/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/secondhand_platform/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_bak.html" />
+    <entry file="file://$PROJECT_DIR$/templates/edit.html" />
+    <entry file="file://$PROJECT_DIR$/templates/list.html" />
+    <entry file="file://$PROJECT_DIR$/secondhand_platform/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        <state relative-caret-position="432">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_bak.html" />
+    <entry file="file://$PROJECT_DIR$/a.py" />
+    <entry file="file://$PROJECT_DIR$/static/plugins/assets/css/material-dashboard.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/plugins/assets/js/core/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plat/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/plugins/essence 2/img/core-img/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/plugins/essence 2/js/jquery/jquery-2.2.4.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_good.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="27" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plat/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html" />
-    <entry file="file://$PROJECT_DIR$/accounts/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plat/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/admin.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/secondhand_platform/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1260">
-          <caret line="24" column="65" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/secondhand_platform/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/add.html" />
-    <entry file="file://$PROJECT_DIR$/templates/edit.html" />
-    <entry file="file://$PROJECT_DIR$/templates/list.html" />
     <entry file="file://$PROJECT_DIR$/templates/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plat/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/del_goods.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/add_goods.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="26" column="76" selection-start-line="26" selection-start-column="76" selection-end-line="26" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/edit_goods.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-271">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plat/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/plat/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        <state relative-caret-position="24">
+          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/secondhand_platform/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+    <entry file="das://c8788f65-2014-43a1-8de3-6a7cafb29498/schema/main/table/plat_goods">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plat/models.py">
+    <entry file="das://c8788f65-2014-43a1-8de3-6a7cafb29498/schema/main/table/plat_plat">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/edit_goods.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        <state relative-caret-position="336">
+          <caret line="89" column="42" lean-forward="true" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#94#3685#0#HTML" />
+            <element signature="e#3817#3901#0#HTML" expanded="true" />
+            <element signature="e#7332#9905#0#HTML" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/goods.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="83" column="45" lean-forward="true" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
+          <folding>
+            <element signature="e#3816#3900#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/del_goods.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/plat/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+        <state relative-caret-position="-2">
+          <caret selection-end-line="1" selection-end-column="51" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plat/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/add_bak.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-223">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="384">
+          <caret line="107" column="24" lean-forward="true" selection-start-line="107" selection-start-column="24" selection-end-line="124" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="71" column="54" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="54" />
+        <state relative-caret-position="1004">
+          <caret line="84" column="22" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plat/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="991">
+          <caret line="407" column="7" selection-start-line="407" selection-start-column="7" selection-end-line="407" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plat/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirement.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plat/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/secondhand_platform/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="873">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#4#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/goods.html">
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        <state relative-caret-position="414">
+          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="43" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
