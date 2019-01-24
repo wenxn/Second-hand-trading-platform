@@ -15,9 +15,11 @@ class user_form(ModelForm):
 class user_detail_form(ModelForm):
     class Meta:
         model = UserInfo
-        fields = ('username','password')
+        fields = ('Institute','student_id','email','introduce','photo')
 
         widgets = {
-            'username': TextInput(attrs={"class":"form-control"}),
-            'password': PasswordInput(attrs={"class":"form-control"}),
+            'Institute': TextInput(attrs={"class": "form-control"}),
+            'student_id': TextInput(attrs={"class": "form-control"}),
+            'email': TextInput(attrs={"class": "form-control"}),
+            'introduce': TextInput(attrs={"class": "form-control"}),
         }

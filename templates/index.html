@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="/static/plugins/essence%202/css/core-style.css">
     <link rel="stylesheet" href="/static/plugins/essence%202/style.css">
 
+    {% block css %}
+    {% endblock %}
+
 </head>
 
 <body>
@@ -66,9 +69,10 @@
                                 <ul class="dropdown">
                                     <li><a href="/plat/add_goods">发布闲置</a></li>
                                     <li><a href="/plat/">闲置列表</a></li>
-                                    <li><a href="">个人中心</a></li>
+                                    <li><a href="/accounts/myself">个人中心</a></li>
                                 </ul>
                             </li>
+                        {% block login %}
                             {% if user.is_authenticated %}
                             <li><a href="">{{ user.username }}</a>
                                 <ul class="dropdown">
@@ -80,6 +84,7 @@
                                 <li><a href="/accounts/login">请先登录</a>
 
                             {% endif %}
+                            {% endblock %}
                         </ul>
                     </div>
                 </div>
@@ -185,7 +190,6 @@
             </div>
         </div>
     </div>
-
 
     <section class="welcome_area bg-img background-overlay" style="background-image: url(/static/images/clean.jpg);">
         <div class="container h-100">
@@ -365,7 +369,7 @@
                             <!-- Product Description -->
                             <div class="product-description">
                                 <span>mango</span>
-                                <a href="single-product-details.html">
+                                <a href="#">
                                     <h6>PETITE Belted Jumper Dress</h6>
                                 </a>
                                 <p class="product-price">$80.00</p>

@@ -41,7 +41,7 @@ def edit_goods(request,id):
         form = goods_form(request.POST,instance=obj)
         if form.is_valid():
             v = models.Good.objects.filter(id=id).update(**form.cleaned_data)
-            return redirect("/plat/plat")
+            return redirect("/plat")
         else:
             print(form.errors)
     return render(request, 'edit_goods.html', {'form': form,'id':id})
@@ -53,9 +53,16 @@ def del_goods(request,id):
     goods.delete()
     return redirect("/plat/")
 
+def good_detail(request,id):
+    goods = models.Good.objects.filter(id=id)
+    good = models.Good.objects.filter(id=id).first()
+    good.views +=1
+    good.save()
+    return render(request, 'good-details.html',{'goods':goods})
+
 def home(request):
     plats = Plat.objects.all()
-    return render(request, 'homepage.html', {'plats': plats})
+    return render(request, 'index.html', {'plats': plats})
 
 '''
     form = goods_form()

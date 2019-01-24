@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect,HttpResponse
-from .forms import user_form
+from .forms import user_form,user_detail_form
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -44,6 +44,27 @@ def signup(request):
     return render(request, 'signup.html',{'form':form})
 
 @login_required
-def myself(request):
-    return render(request, 'myself.html',{})
+def myself_edit(request):
+    user = request.user
+    user_detail = UserInfo.objects.filter(username=user).first()
+    form = user_detail_form(instance=user_detail)
+    if request.method == "POST":
+        user = request.user
+        user_detail = UserInfo.objects.filter(username=user).first()
+        form = user_detail_form(request.POST, instance=user_detail)
+        print(form)
+        if form.is_valid():
+            print(form.cleaned_data)
+            user = request.user
+            v = UserInfo.objects.filter(username=user).update(**form.cleaned_data)
+            return redirect("/accounts/myself")
+        else:
+            print(form.errors)
+    return render(request, 'myself_edit.html',{'form':form,'user':user})
 
+
+def myself(request):
+    user = request.user
+    userdetail = UserInfo.objects.filter(username=user).first()
+    form = user_detail_form(instance=userdetail)
+    return render(request, 'myself.html', {'user': user,'form':form,'userdetail':userdetail})
