@@ -65,11 +65,21 @@
                             <li><a href="#">我的闲置</a>
                                 <ul class="dropdown">
                                     <li><a href="/plat/add_goods">发布闲置</a></li>
-                                    <li><a href="/plat/plat">闲置列表</a></li>
+                                    <li><a href="/plat/">闲置列表</a></li>
                                     <li><a href="">个人中心</a></li>
                                 </ul>
                             </li>
-                            <li><a href="">闲置商城</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="">{{ user.username }}</a>
+                                <ul class="dropdown">
+                                    <li><a href="/accounts/logout">退出登录</a></li>
+                                    <li><a href="/accounts/signup">注册新账号</a></li>
+                                </ul>
+                                </li>
+                                {% else %}
+                                <li><a href="/accounts/login">请先登录</a>
+
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -170,14 +180,14 @@
                     <li><span>total:</span> <span>$232.00</span></li>
                 </ul>
                 <div class="checkout-btn mt-100">
-                    <a href="checkout.html" class="btn essence-btn">check out</a>
+                    <a href="#" class="btn essence-btn">check out</a>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <section class="welcome_area bg-img background-overlay" style="background-image: url(/static/plugins/essence%202/img/bg-img/bg-1.jpg);">
+    <section class="welcome_area bg-img background-overlay" style="background-image: url(/static/images/clean.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -253,7 +263,7 @@
                             <!-- Product Description -->
                             <div class="product-description">
                                 <span>topshop</span>
-                                <a href="single-product-details.html">
+                                <a href="#">
                                     <h6>Knot Front Mini Dress</h6>
                                 </a>
                                 <p class="product-price">$80.00</p>
@@ -403,6 +413,10 @@
     <script src="/static/plugins/essence%202/js/plugins.js"></script>
     <script src="/static/plugins/essence%202/js/classy-nav.min.js"></script>
     <script src="/static/plugins/essence%202/js/active.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
 {% block js %}
 {% endblock %}
 </body>

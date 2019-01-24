@@ -106,44 +106,18 @@
                             <h5>修改闲置</h5>
                         </div>
 
-                        <form method="post" href="add.html">
+                        <form method="post" href="edit_{{ id }}.html">
                             {% csrf_token %}
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="good_name">闲置名称 <span>*</span></label>
-                                    <input type="text" class="form-control" value="" name="good_name" required>
+                            {% for field in form %}
+                                    <div class="form-group">
+                                    <label for="{{ field.name }}">{{ field.label }}</label>
+                                    {{ field }}
                                 </div>
-                                <div class="col-12 mb-3">
-                                    <label for="good_description">闲置描述</label>
-                                    <input type="text" class="form-control" value="" name="good_description">
-                                </div>
-                                <div class="col-12 mb-3">
-                                    <label for="plat">闲置类型 <span>*</span></label>
-                                    <select class="w-100" id="plat" name="plat">
-                                        <option value="1">书籍教材</option>
-                                        <option value="2">电子设备</option>
-                                        <option value="3">生活用品</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 mb-3">
-                                    <label for="price">闲置价格 <span>*</span></label>
-                                    <input type="text" class="form-control mb-3" id="street_address" value="" name="price">
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="custom-control custom-checkbox d-block mb-2">
-                                        <input type="checkbox" class="custom-control-input" id="online" name="online">
-                                        <label class="custom-control-label" for="online">是否包邮</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox d-block mb-2">
-                                        <input type="checkbox" class="custom-control-input" id="lower" name="lower">
-                                        <label class="custom-control-label" for="lower">是否议价</label>
-                                    </div>
-                                </div>
-                                <div class="box-footer">
+                            {% endfor %}
+                        <div class="box-footer">
                 <button type="submit" class="btn btn-info pull-right">提交</button>
               </div>
-                            </div>
+
                         </form>
                         <div class="box-body ">
               </div>

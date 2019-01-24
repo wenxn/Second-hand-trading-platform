@@ -3,9 +3,9 @@ from django.conf.urls import url
 from plat import views
 
 urlpatterns = [
-    re_path(r'^plat/$', views.plat_goods, name="plat_goods"),
+    re_path(r'^$', views.plat_goods, name="plat_goods"),
     re_path(r'^add_goods/$', views.add_goods, name="add_goods"),
-    re_path(r'^edit_goods/$', views.edit_goods, name="edit_goods"),
-    re_path(r'^del_(?P<pk>\d+)/$', views.del_goods, name="del_goods"),
+    re_path(r'^edit_(?P<id>\d+)/$', views.edit_goods, name="edit_goods"),
+    re_path(r'^del_(?P<id>\d+)/$', views.del_goods, name="del_goods"),
     #path('delete_goods/', views.delete_goods, name="delete_goods"),
 ]

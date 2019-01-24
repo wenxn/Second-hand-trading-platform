@@ -108,23 +108,17 @@
                         <form method="post" href="add.html">
                             {% csrf_token %}
                             {% for field in form %}
-                                {% if field.type == "select" %}
                                     <div class="form-group">
                                     <label for="{{ field.name }}">{{ field.label }}</label>
                                     {{ field }}
                                 </div>
-                                {% else %}
-                                    <div class="form-group">
-                                    <label for="{{ field.name }}">{{ field.label }}</label>
-                                    {{ field }}
-                                </div>
-                                {% endif %}
-
                             {% endfor %}
+                        <div class="box-footer">
+                <button type="submit" class="btn btn-info pull-right">提交</button>
+              </div>
 
                         </form>
-                        <div class="box-body ">
-              </div>
+
                     </div>
                 </div>
 

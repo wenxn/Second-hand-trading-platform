@@ -23,33 +23,32 @@
   {% block sign %}
       <form method="post">
           <div class="box-body ">
-
                             {% csrf_token %}
                             {% for field in form %}
                              <div class="form-group">
                                 <label for="{{ field.name }}">{{ field.label }}</label>
                                     {{ field }}
-
-                            {% if field.errors %}
-                            {{ field.errors.a }}
-                              <button type="button" class="btn btn-block btn-danger btn-xs">{{ field.errors }}</button>
-                            {% endif %}
                              </div>
                             {% endfor %}
-
           </div>
-      <div class="row">
 
-        <div class="col-xs-2">
+        <div class="col-xs-13">
           <button type="submit" class="btn btn-block btn-flat">
               登录
           </button>
+
         </div>
+          </form>
+<div class="card-footer text-muted text-center"> 新用户？
+              <a href="/accounts/signup">
+              注册
+          </a>
+          </div>
       </div>
-    </form>
-            {% endblock %}
+
+
+  {% endblock %}
   </div>
-</div>
 
 <script src="/static/js/jquery.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>

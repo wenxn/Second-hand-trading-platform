@@ -103,27 +103,30 @@
                 <tr>
                   <th>闲置名称</th>
                     <th>闲置内容</th>
-                  <th>评论数</th>
+                  <th>浏览数</th>
                     <th><center> 操作
                     </center></th>
                 </tr>
                 </thead>
                 <tbody>
+                {% for good in goods %}
                 <tr>
-                    <td>蓝牙耳机</td>
-                    <td>4</td>
-                <td> 2</td>
+                    <td>{{ good.good_name }}</td>
+                    <td>{{ good.good_description }}</td>
+                <td> {{ good.views }}</td>
+
                     <td>
                         <center>
-                        <a class="btn btn-primary btn-xs" href="#">
+                        <a class="btn btn-primary btn-xs" href="/plat/edit_{{ good.id }}/">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>编辑
                     </a>
 
-                        <a class="btn btn-primary btn-xs" href="#">
+                        <a class="btn btn-primary btn-xs" href="/plat/del_{{ good.id }}/">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>删除
-                    </a>、
+                    </a>
                         </center>
                         </td>
+                    {% endfor %}
                 </tr>
                 </tbody>
               </table>
