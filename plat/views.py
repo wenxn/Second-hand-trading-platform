@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from django.http import HttpResponse
-from .models import Plat,Good
-from .forms import goods_form
+from .models import Plat,Good,Post
+from .forms import goods_form,PostForm
 from plat import models
 from accounts.models import UserInfo
 from django.contrib.auth.decorators import login_required
@@ -56,23 +56,34 @@ def del_goods(request,id):
 def good_detail(request,id):
     goods = models.Good.objects.filter(id=id)
     good = models.Good.objects.filter(id=id).first()
+    username = request.user
+    userdetail = UserInfo.objects.filter(username=username).first()
     good.views +=1
     good.save()
-    return render(request, 'good-details.html',{'goods':goods})
+    if request.method =='POST':
+        message = request.POST['message']
+        print(message)
+        topic = models.Good.objects.filter(plat=good.plat).first()
+        username = request.user
+        userreal = UserInfo.objects.filter(username=username).first()
+        post = Post.objects.create(
+            message= 'message',
+            update_by = userreal,
+            topic=topic
+        )
+        return redirect("/plat/good_detail")
+    return render(request, 'good_details.html', {'goods':goods,'userdetail':userdetail})
+
 
 def home(request):
     plats = Plat.objects.all()
     return render(request, 'index.html', {'plats': plats})
 
-'''
-    form = goods_form()
-    if request.method == "POST":
-        form = goods_form(request.POST)
-        if form.is_valid():
-            v = models.Good.objects.filter().update(**form.cleaned_data)
-            print("修改的行数：", v)
-            return redirect("goods.html")
-    return render(request, "edit_goods.html", {
-        'form': form,
-    })
-    '''
+def love_goods(request):
+    return render(request, 'love_good.html')
+
+def my_good(request):
+    user = request.user
+    user = UserInfo.objects.filter(username=user).first()
+    goods = models.Good.objects.filter(starter=user).all()
+    return render(request, 'my_good.html', {'goods': goods})

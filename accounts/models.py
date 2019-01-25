@@ -10,6 +10,7 @@ class UserInfo(models.Model):
     nid = models.BigAutoField(primary_key=True)
     student_id = models.IntegerField(verbose_name='学号', null=True, blank=True)
     username = models.CharField(verbose_name='姓名', max_length=32,unique=True)
+    #gender = models.CharField(verbose_name='性别', max_length=32,default='男')
     password = models.CharField(verbose_name='密码', max_length=32)
     Institute = models.CharField(verbose_name='学院', max_length=32, null=True, blank=True)
     introduce = models.CharField(verbose_name='个人介绍', max_length=255, null=True, blank=True)

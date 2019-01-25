@@ -17,6 +17,7 @@
 	<div class="container">
     </div>
     </section>
+
 <section class="user-profile section" style="margin-top:100px">
 	<div class="container">
 		<div class="row">
@@ -36,15 +37,12 @@
 					<div class="widget user-dashboard-menu">
 						<ul>
 							<li>
-								<a href="#"><i class="fa fa-user"></i> 个人中心 </a></li>
+								<a href="/accounts/myself"><i class="fa fa-user"></i> 个人中心 </a></li>
 							<li>
-								<a href="#"><i class="fa fa-bookmark-o"></i> 我收藏的 <span>5</span></a>
+								<a href="/plat/love_good"><i class="fa fa-bookmark-o"></i> 我收藏的 <span>5</span></a>
 							</li>
 							<li>
-								<a href="#"><i class="fa fa-file-archive-o"></i>我发布的 <span>12</span></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-bolt"></i> 我买到的 <span>23</span></a>
+								<a href="/plat/my_good"><i class="fa fa-file-archive-o"></i>我发布的 <span>12</span></a>
 							</li>
 							<li>
 								<a href="#"><i class="fa fa-cog"></i> 注销 </a>
@@ -56,6 +54,8 @@
 					</div>
 				</div>
 			</div>
+
+{% block right %}
 			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
 				<div class="widget personal-info">
 					<h3 class="widget-header user">个人信息</h3>
@@ -70,6 +70,9 @@
                                 <div class="widget user-dashboard-menu">
 						<ul><li>
 								<a href="#"><i class="fa"></i>姓名 <span>{{ userdetail.username }}</span></a>
+							</li>
+                            <li>
+								<a href="#"><i class="fa"></i>性别 <span>女生</span></a>
 							</li>
 							<li>
 								<a href="#"><i class="fa"></i>学院 <span>{{ userdetail.Institute }}</span></a>
@@ -94,9 +97,10 @@
 					</form>
 				</div>
 			</div>
+     {% endblock %}
                             </div>
 		</div>
-	</div>
+
 </section>
 
 {% endblock %}

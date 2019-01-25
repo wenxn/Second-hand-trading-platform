@@ -33,6 +33,8 @@ class goods_form(ModelForm):
         }
 
 class PostForm(forms.ModelForm):
+    content = forms.CharField(max_length=128,
+                              widget=forms.Textarea(attrs={'class': 'comment-input',}))
     class Meta:
         model = Post
         fields = ['message', ]
