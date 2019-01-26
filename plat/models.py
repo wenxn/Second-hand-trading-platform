@@ -38,7 +38,6 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(null=True)
     created_by = models.ForeignKey(UserInfo, on_delete=models.CASCADE)
-    updated_by = models.ForeignKey(UserInfo, null=True,on_delete=models.CASCADE,related_name='+')
 
     def __str__(self):
         return self.message

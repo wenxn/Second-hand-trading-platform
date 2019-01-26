@@ -1,10 +1,12 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from django.http import HttpResponse
+from django.utils import timezone
 from .models import Plat,Good,Post
 from .forms import goods_form,PostForm
 from plat import models
 from accounts.models import UserInfo
 from django.contrib.auth.decorators import login_required
+from utils.pagination import Pagination
 
 
 # Create your views here.
@@ -12,8 +14,13 @@ from django.contrib.auth.decorators import login_required
 def plat_goods(request):
     user = request.user
     user = UserInfo.objects.filter(username=user).first()
-    goods = models.Good.objects.filter(starter=user).all()
-    return render(request, 'goods.html',{'goods':goods})
+    count = models.Good.objects.filter(starter=user).count()
+    p = request.GET.get('p')
+    path_info = request.META.get('PATH_INFO')
+    req = Pagination(p, count, per_page_count=3)
+    page_str = req.page_str(path_info)
+    goods = models.Good.objects.filter(starter=user).all()[req.start:req.end]
+    return render(request, 'goods.html',{'goods':goods,"page_str": page_str})
 
 @login_required
 def add_goods(request):
@@ -56,23 +63,26 @@ def del_goods(request,id):
 def good_detail(request,id):
     goods = models.Good.objects.filter(id=id)
     good = models.Good.objects.filter(id=id).first()
+    post_list = models.Post.objects.filter(topic=good).all()
     username = request.user
     userdetail = UserInfo.objects.filter(username=username).first()
     good.views +=1
     good.save()
+
     if request.method =='POST':
         message = request.POST['message']
-        print(message)
-        topic = models.Good.objects.filter(plat=good.plat).first()
+        good = models.Good.objects.filter(id=id).first()
         username = request.user
         userreal = UserInfo.objects.filter(username=username).first()
-        post = Post.objects.create(
-            message= 'message',
-            update_by = userreal,
-            topic=topic
-        )
-        return redirect("/plat/good_detail")
-    return render(request, 'good_details.html', {'goods':goods,'userdetail':userdetail})
+        print(userreal)
+        post = Post()
+        post.message = message
+        post.updated_at = timezone.now()
+        post.created_by = userreal
+        post.topic = good
+        post.save()
+        return redirect("/plat/good_%s" % id)
+    return render(request, 'good_details.html', {'goods':goods,'userdetail':userdetail,'post_list':post_list})
 
 
 def home(request):
@@ -85,5 +95,16 @@ def love_goods(request):
 def my_good(request):
     user = request.user
     user = UserInfo.objects.filter(username=user).first()
-    goods = models.Good.objects.filter(starter=user).all()
-    return render(request, 'my_good.html', {'goods': goods})
+    count = models.Good.objects.filter(starter=user).count()
+    p = request.GET.get('p')
+    path_info = request.META.get('PATH_INFO')
+    req = Pagination(p, count, per_page_count=3)
+    page_str = req.page_str(path_info)
+    goods = models.Good.objects.filter(starter=user).all()[req.start:req.end]
+    return render(request, 'my_good.html', {'goods': goods,"page_str": page_str})
+
+def delete_post(request,id):
+    good = models.Good.objects.filter(id=id).first()
+    post = models.Post.objects.filter(topic=good).first()
+    post.delete()
+    return redirect("/plat/good_%s" % id)
