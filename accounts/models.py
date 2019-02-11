@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
+import uuid
 
 # Create your models here.
 
@@ -16,7 +17,7 @@ class UserInfo(models.Model):
     introduce = models.CharField(verbose_name='个人介绍', max_length=255, null=True, blank=True)
     email = models.EmailField(verbose_name='邮箱', unique=True, null=True, blank=True)
     latest_login_time = models.DateTimeField(verbose_name='最近登录时间', null=True, blank=True)
-    photo = models.ImageField(verbose_name='头像', max_length=255, null=True, blank=True)
+    photo = models.ImageField(upload_to= 'avator',verbose_name='头像', max_length=255, null=True, blank=True)
 
     class Meta:
         verbose_name_plural = '用户'

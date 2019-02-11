@@ -1,4 +1,5 @@
 {% extends 'index.html' %}
+{% load template_tag %}
 
 {% block content %}
     <div class="cart-bg-overlay"></div>
@@ -79,9 +80,7 @@
             </div>
         </div>
     </div>
-    <!-- ##### Right Side Cart End ##### -->
 
-    <!-- ##### Breadcumb Area Start ##### -->
     <div class="breadcumb_area bg-img" style="background-image: url(/static/plugins/essence%202/img/bg-img/breadcumb.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
@@ -105,13 +104,20 @@
                             <h5>发布闲置</h5>
                         </div>
 
-                        <form method="post" href="add.html">
+                        <form method="post" href="add.html" enctype="multipart/form-data">
                             {% csrf_token %}
                             {% for field in form %}
+                        {% if field.name == 'plat' %}
+                        <div class="form-group">
+                        <label for="{{ field.name }}" class="col-sm-2 control-label">{{ field.label }}</label>
+                         {% get_plat %}
+                        </div>
+                                {% else %}
                                     <div class="form-group">
                                     <label for="{{ field.name }}">{{ field.label }}</label>
                                     {{ field }}
                                 </div>
+                                {% endif %}
                             {% endfor %}
                         <div class="box-footer">
                 <button type="submit" class="btn btn-info pull-right">提交</button>
@@ -148,7 +154,7 @@
                                 </div>
                                 <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
                                     <div class="card-body">
-                                        <p>b</p>
+                                        <p>微信账号</p>
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +166,7 @@
                                 </div>
                                 <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
                                     <div class="card-body">
-                                        <p>a</p>
+                                        <p>支付宝账号</p>
                                     </div>
                                 </div>
                             </div>

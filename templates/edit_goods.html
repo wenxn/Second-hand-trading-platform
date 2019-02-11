@@ -1,5 +1,5 @@
 {% extends 'index.html' %}
-
+{% load template_tag %}
 
 {% block content %}
     <div class="cart-bg-overlay"></div>
@@ -106,13 +106,20 @@
                             <h5>修改闲置</h5>
                         </div>
 
-                        <form method="post" href="edit_{{ id }}.html">
+                        <form method="post" href="edit_{{ id }}.html" enctype="multipart/form-data">
                             {% csrf_token %}
                             {% for field in form %}
+                        {% if field.name == 'plat' %}
+                        <div class="form-group">
+                        <label for="{{ field.name }}" class="col-sm-2 control-label">{{ field.label }}</label>
+                         {% get_plat %}
+                        </div>
+                                {% else %}
                                     <div class="form-group">
                                     <label for="{{ field.name }}">{{ field.label }}</label>
                                     {{ field }}
                                 </div>
+                                {% endif %}
                             {% endfor %}
                         <div class="box-footer">
                 <button type="submit" class="btn btn-info pull-right">提交</button>

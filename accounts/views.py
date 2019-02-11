@@ -51,16 +51,14 @@ def myself_edit(request):
     if request.method == "POST":
         user = request.user
         user_detail = UserInfo.objects.filter(username=user).first()
-        form = user_detail_form(request.POST, instance=user_detail)
-        print(form)
+        form = user_detail_form(request.POST,request.FILES, instance=user_detail)
         if form.is_valid():
-            print(form.cleaned_data)
             user = request.user
             v = UserInfo.objects.filter(username=user).update(**form.cleaned_data)
             return redirect("/accounts/myself")
         else:
             print(form.errors)
-    return render(request, 'myself_edit.html',{'form':form,'user':user})
+    return render(request, 'myself_edit.html',{'form':form,'user':user,'user_detail':user_detail})
 
 
 def myself(request):

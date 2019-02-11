@@ -24,18 +24,20 @@ def plat_goods(request):
 
 @login_required
 def add_goods(request):
-    form = goods_form(request.POST)
+    form = goods_form(request.POST,request.FILES)
     user = request.user
     user = UserInfo.objects.filter(username=user).first()
     if request.method == "POST":
-        form = goods_form(request.POST)
+        form = goods_form(request.POST,request.FILES)
+        print(form)
         if form.is_valid():
             data = {
             'starter': user,
         }
             data.update(form.cleaned_data)
+            img = request.FILES.get('good_photo')
             v = Good.objects.create(**data)
-            return redirect("/plat")
+            return redirect("/plat/my_good")
         else:
             print(form.errors)
     return render(request, 'add_bak.html', {'form':form})
@@ -45,10 +47,11 @@ def edit_goods(request,id):
     obj = models.Good.objects.filter(id=id).first()
     form = goods_form(instance=obj)
     if request.method == "POST":
-        form = goods_form(request.POST,instance=obj)
+        form = goods_form(request.POST,request.FILES,instance=obj)
         if form.is_valid():
+            img = request.FILES.get('good_photo')
             v = models.Good.objects.filter(id=id).update(**form.cleaned_data)
-            return redirect("/plat")
+            return redirect("/plat/my_good")
         else:
             print(form.errors)
     return render(request, 'edit_goods.html', {'form': form,'id':id})
@@ -58,7 +61,7 @@ def edit_goods(request,id):
 def del_goods(request,id):
     goods = models.Good.objects.filter(id=id)
     goods.delete()
-    return redirect("/plat/")
+    return redirect("/plat/my_good")
 
 def good_detail(request,id):
     goods = models.Good.objects.filter(id=id)
@@ -104,7 +107,9 @@ def my_good(request):
     return render(request, 'my_good.html', {'goods': goods,"page_str": page_str})
 
 def delete_post(request,id):
-    good = models.Good.objects.filter(id=id).first()
-    post = models.Post.objects.filter(topic=good).first()
+    post = models.Post.objects.filter(id=id).first()
     post.delete()
     return redirect("/plat/good_%s" % id)
+
+def reply_post(request):
+    pass

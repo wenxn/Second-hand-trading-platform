@@ -1,5 +1,8 @@
 from django.db import models
 from accounts.models import UserInfo
+import uuid
+import os
+from secondhand_platform.settings import MEDIA_ROOT
 
 class Plat(models.Model):
     plat_name = models.CharField(max_length=30, unique=True)
@@ -7,6 +10,14 @@ class Plat(models.Model):
 
     def __str__(self):
         return self.plat_name
+
+
+def user_directory_path(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = '{}.{}'.format(uuid.uuid4().hex[:8], ext)
+    # return the whole path to the file
+    return "{0}/{1}/{2}".format(instance.starter.username,'file',filename)
+
 
 class Good(models.Model):
     good_name = models.CharField(verbose_name="闲置名称",max_length=255)
@@ -27,7 +38,7 @@ class Good(models.Model):
     )
     lower = models.IntegerField(verbose_name="议价", choices=lower_choices, default=1)
     loved = models.BooleanField(verbose_name="收藏", default=False)
-    good_photo = models.ImageField(verbose_name='图片', null=True, blank=True)
+    good_photo = models.ImageField(upload_to= user_directory_path,verbose_name='图片', null=True, blank=True)
 
     def __str__(self):
         return self.good_name

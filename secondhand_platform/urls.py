@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from plat import views as plat_views
-
+from django.conf import  settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -26,4 +27,4 @@ urlpatterns = [
     path('plat/', include('plat.urls')),
     path('', plat_views.home, name='home'),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

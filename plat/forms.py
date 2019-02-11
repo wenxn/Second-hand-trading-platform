@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm,TextInput,Select,CheckboxInput
+from django.forms import ModelForm,TextInput,Select,FileInput
 from .models import Post, Good
 
 '''

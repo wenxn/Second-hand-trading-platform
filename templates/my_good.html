@@ -17,7 +17,12 @@
 							<tr>
 
 								<td class="product-thumb">
-									<img width="80px" height="auto" src="/static/plugins/classimax.v-1/images/products/products-1.jpg" alt="image description"></td>
+                                    {% if good.good_photo %}
+									<img width="80px" height="auto" src={{ good.good_photo.url }}></td>
+                                        {% else %}
+
+									<img width="80px" height="auto" src="/static/images/clean.jpeg"></td>
+                            {% endif %}
 								<td class="product-details">
 									<h3 class="title">{{ good.good_name }}</h3>
                                 <span><strong>价格</strong>{{ good.price }}</span>
