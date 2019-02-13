@@ -5,8 +5,9 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.models import UserInfo
+from plat.models import love,Good
 
-# Create your views here.
+
 def user_login(request):
     if request.method == 'POST':
         form = user_form(request.POST)
@@ -47,6 +48,8 @@ def signup(request):
 def myself_edit(request):
     user = request.user
     user_detail = UserInfo.objects.filter(username=user).first()
+    fav_self = love.objects.filter(user_id=user_detail).count()
+    good_self = Good.objects.filter(starter=user_detail).count()
     form = user_detail_form(instance=user_detail)
     if request.method == "POST":
         user = request.user
@@ -58,11 +61,13 @@ def myself_edit(request):
             return redirect("/accounts/myself")
         else:
             print(form.errors)
-    return render(request, 'myself_edit.html',{'form':form,'user':user,'user_detail':user_detail})
+    return render(request, 'myself_edit.html',{'form':form,'user':user,'user_detail':user_detail,'fav_self':fav_self,'good_self':good_self})
 
 
 def myself(request):
     user = request.user
     userdetail = UserInfo.objects.filter(username=user).first()
     form = user_detail_form(instance=userdetail)
-    return render(request, 'myself.html', {'user': user,'form':form,'userdetail':userdetail})
+    fav_self = love.objects.filter(user_id=userdetail).count()
+    good_self = Good.objects.filter(starter=userdetail).count()
+    return render(request, 'myself.html', {'user': user,'form':form,'userdetail':userdetail,'fav_self':fav_self,'good_self':good_self})

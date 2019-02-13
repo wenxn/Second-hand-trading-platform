@@ -11,12 +11,15 @@ class Plat(models.Model):
     def __str__(self):
         return self.plat_name
 
+'''
 
 def user_directory_path(instance, filename):
     ext = filename.split('.')[-1]
     filename = '{}.{}'.format(uuid.uuid4().hex[:8], ext)
     # return the whole path to the file
     return "{0}/{1}/{2}".format(instance.starter.username,'file',filename)
+
+'''
 
 
 class Good(models.Model):
@@ -37,8 +40,8 @@ class Good(models.Model):
         (2, '不支持'),
     )
     lower = models.IntegerField(verbose_name="议价", choices=lower_choices, default=1)
-    loved = models.BooleanField(verbose_name="收藏", default=False)
-    good_photo = models.ImageField(upload_to= user_directory_path,verbose_name='图片', null=True, blank=True)
+    # good_photo = models.ImageField(upload_to= user_directory_path,verbose_name='图片', null=True, blank=True)
+    good_photo = models.ImageField(upload_to='', verbose_name='图片', null=True, blank=True)
 
     def __str__(self):
         return self.good_name
@@ -52,3 +55,17 @@ class Post(models.Model):
 
     def __str__(self):
         return self.message
+
+class love(models.Model):
+    user_id = models.ForeignKey(UserInfo, verbose_name='姓名',on_delete=models.CASCADE)
+    good_id = models.ForeignKey(Good, verbose_name='物品',on_delete=models.CASCADE)
+    add_time = models.DateTimeField(auto_now_add=True)
+    loved = models.BooleanField(verbose_name="收藏", default=False)
+    type_choices = (
+        (1, '商品'),
+        (2, '发布者'),
+    )
+    type = models.IntegerField(verbose_name="收藏类型",choices=type_choices, default=1)
+
+    def __str__(self):
+        return '%s + %s' % (self.user_id , self.good_id)

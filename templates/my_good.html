@@ -3,6 +3,7 @@
 			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
 				<div class="widget dashboard-container my-adslist">
 					<h3 class="widget-header">我发布的</h3>
+                {% for good in goods %}
 					<table class="table table-responsive product-dashboard-table">
 						<thead>
 							<tr>
@@ -13,7 +14,7 @@
 							</tr>
 						</thead>
 						<tbody>
-                        {% for good in goods %}
+
 							<tr>
 
 								<td class="product-thumb">
@@ -63,10 +64,17 @@
 
 								</td>
 							</tr>
-                        {% endfor %}
-
 						</tbody>
 					</table>
+                    {% empty %}
+                    <p>无发布闲置</p>
+                    <p>
+                        <a href="/plat/add_goods/">  去发布？
+                        </a>
+                    </p>
+
+                        {% endfor %}
+
 
 				</div>
             <div class="box-footer clearfix">

@@ -72,13 +72,9 @@
 
     <section class="single_product_details_area d-flex align-items-center">
 
-        <div class="single_product_thumb clearfix">
-            <div class="product_thumbnail_slides owl-carousel">
-                <img src="/static/plugins/essence%202/img/product-img/product-big-1.jpg" alt="">
-                <img src="/static/plugins/essence%202/img/product-img/product-big-2.jpg" alt="">
-                <img src="/static/plugins/essence%202/img/product-img/product-big-3.jpg" alt="">
-            </div>
-        </div>
+                {% for good in goods %}
+                <img src={{ good.good_photo.url }} alt="">
+                {% endfor %}
 
         {% for good in goods %}
         <div class="single_product_desc clearfix">
@@ -91,7 +87,6 @@
             <p class="product-desc">{{ good.good_description }}</p>
              <span>{{ good.plat }}</span>
 
-            <form class="cart-form clearfix" method="post">
                 <div class="mt-50 mb-30">
                     {% if good.online == 1 %}
                     包邮
@@ -100,13 +95,23 @@
                     可议价
                     {% endif %}
                 </div>
-                <div class="cart-fav-box d-flex align-items-center">
-                    <button type="submit" name="addtocart" value="5" class="btn essence-btn">加入收藏</button>
+        {% if not fav %}
+            <div class="cart-fav-box d-flex align-items-center">
+                    <button type="submit" class="btn essence-btn">加入收藏</button>
                     <div class="product-favourite ml-4">
-                        <a href="#" class="favme fa fa-heart"></a>
+                        <a href="/plat/loved_{{ good.id }}" class="favme fa fa-heart"></a>
                     </div>
                 </div>
-            </form>
+                                {% else %}
+            <div class="cart-fav-box d-flex align-items-center">
+                    <button type="submit" class="btn essence-btn">取消收藏</button>
+                    <div class="product-favourite ml-4">
+                        <a href="/plat/unloved_{{ good.id }}" class="favme fa fa-heart"></a>
+                    </div>
+                </div>
+                            {% endif %}
+
+
         </div>
     </section>
 
@@ -117,17 +122,17 @@
                 <div class="col-12 col-lg-9">
                     <div class="blog-post-author mt-100 d-flex">
                         <div class="author-thumbnail">
-                            <img src="/static/images/clean.jpeg" alt="">
+                            <img src={{ thisgood.starter.photo.url }} alt="">
                         </div>
                         <div class="author-info">
                             <div class="line"></div>
                             <span class="author-role">发布者</span>
-                            <h4><a href="#" class="author-name">{{ userdetail.username }}</a></h4>
-                            <p>{{ userdetail.introduce }}</p>
+                            <h4><a href="#" class="author-name">{{ thisgood.starter.username }}</a></h4>
+                            <p>{{ thisgood.starter.introduce }}</p>
                         </div>
                     </div>
                     <div class="col-12 col-lg-9">
-				<div class="product-details" style="margin-top:30px" >
+				<div class="product-details" style="margin-top:20px" >
 					<div class="product-meta">
 						<ul class="list-inline">
 							<li class="list-inline-item"><i class="fa fa-user-o"></i> 发布 <a href="">{{ good.starter }}</a></li>
@@ -135,33 +140,8 @@
 							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> 地址 <a href="">校内</a></li>
 						</ul>
 					</div>
-					<div id="carouselExampleIndicators" class="product-slider carousel slide" data-ride="carousel">
-						<ol class="carousel-indicators">
-							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-							<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-						</ol>
-						<div class="carousel-inner">
-							<div class="carousel-item active">
-								<img class="d-block w-100" src="/static/plugins/classimax.v-1/images/products/products-1.jpg" alt="First slide">
-							</div>
-							<div class="carousel-item">
-								<img class="d-block w-100" src="/static/plugins/classimax.v-1/images/products/products-2.jpg" alt="Second slide">
-							</div>
-							<div class="carousel-item">
-								<img class="d-block w-100" src="/static/plugins/classimax.v-1/images/products/products-3.jpg" alt="Third slide">
-							</div>
-						</div>
-						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						</a>
-					</div>
-					<div class="content mt-100 col-md-15" >
+
+					<div class="content mt-100 col-md-15">
 						<ul class="nav nav-pills  justify-content-center" id="pills-tab" role="tablist">
 							<li class="nav-item">
 								<a class="nav-link active" id="good_detail-tab" data-toggle="pill" href="#good_detail" role="tab" aria-controls="pills-home" aria-selected="true">闲置详情</a>
@@ -176,7 +156,7 @@
 						<div class="tab-content col-md-24" id="pills-tabContent">
 							<div class="tab-pane fade show active" id="good_detail" role="tabpanel" aria-labelledby="good_detail-tab">
 								<h3 class="tab-title">闲置</h3>
-								<p> 这是个物品的详情页，下边有视频 </p>
+								<p> 这是个物品的详情页 </p>
                                 <p>{{ good.good_description }}</p>
 
 								<iframe width="100%" height="400" src="https://www.youtube.com/embed/LUH7njvhydE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
@@ -187,11 +167,12 @@
                     <div class="comment_area clearfix mt-10">
                         <h3 class="tab-title">评论区</h3>
                         {% for post in post_list %}
+
                         <ol>
                             <li class="single_comment_area">
                                 <div class="comment-content d-flex" style="margin-top:50px">
                                     <div class="comment-author">
-                                        <img src="/static/images/clean.jpeg" alt="author">
+                                        <img src={{ post.created_by.photo.url }} alt="">
                                     </div>
                                     <div class="comment-meta">
                                         <a href="#" class="post-date">{{ post.updated_at| naturaltime }}</a>
@@ -199,12 +180,15 @@
                                         <p>{{ post.message }}</p>
                                         <a href="#" class="comment-reply">Reply</a>
                                         {% if post.created_by == userdetail %}
-                                        <a href="#" class="comment-reply">Delete</a>
+                                        <a href=" /plat/delpost_{{ post.id }}" class="comment-reply">Delete</a>
                                         {% endif %}
                                     </div>
                                 </div>
                             </li>
                         </ol>
+
+                            {% empty %}
+                                <p>暂无对该闲置的评论</p>
                             {% endfor %}
                     </div>
 
@@ -245,79 +229,53 @@
 
                 <div class="col-12 col-md-4 col-lg-3">
                     <div class="post-sidebar-area">
+                        <div class="widget disclaimer">
+						<h5 class="widget-header">安全提示</h5>
+						<ul>
+							<li>1.当面交易时选择空旷地方</li>
+							<li>2.在交易完成前检查物品</li>
+							<li>3.确定交易无误才付款</li>
+						</ul>
+					</div>
+
+                        <div class="widget rate">
+						<!-- Heading -->
+						<h5 class="widget-header text-center">为这件闲置
+						<br>
+						打分</h5>
+						<!-- Rate -->
+						<div class="starrr"></div>
+					</div>
+
                         <div class="sidebar-widget-area">
                             <h5 class="title">猜你喜欢</h5>
                             <a href="#"><img src="/static/plugins/original-master/img/bg-img/add.gif" alt=""></a>
                         </div>
 
                         <div class="sidebar-widget-area">
-                            <h5 class="title">最近发布的闲置</h5>
+                            <h5 class="title">她最近发布的闲置</h5>
 
                             <div class="widget-content">
 
-                                <!-- Single Blog Post -->
-                                <div class="single-blog-post d-flex align-items-center widget-post">
-                                    <!-- Post Thumbnail -->
-                                    <div class="post-thumbnail">
-                                        <img src="/static/plugins/original-master/img/blog-img/lp1.jpg" alt="">
-                                    </div>
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <a href="#" class="post-tag">Lifestyle</a>
-                                        <h4><a href="#" class="post-headline">Party people in the house</a></h4>
-                                        <div class="post-meta">
-                                            <p><a href="#">12 March</a></p>
-                                        </div>
-                                    </div>
-                                </div>
+                                {% for good in user_goods %}
 
-                                <!-- Single Blog Post -->
                                 <div class="single-blog-post d-flex align-items-center widget-post">
                                     <!-- Post Thumbnail -->
                                     <div class="post-thumbnail">
-                                        <img src="/static/plugins/original-master/img/blog-img/lp2.jpg" alt="">
+                                        <img src={{ good.good_photo.url}}>
                                     </div>
                                     <!-- Post Content -->
                                     <div class="post-content">
-                                        <a href="#" class="post-tag">Lifestyle</a>
-                                        <h4><a href="#" class="post-headline">A sunday in the park</a></h4>
+                                        <a href="#" class="post-tag">{{ good.plat }}</a>
+                                        <h4><a href="#" class="post-headline">{{ good.good_name }}</a></h4>
                                         <div class="post-meta">
-                                            <p><a href="#">12 March</a></p>
+                                            <p><a href="#">{{ good.last_updated | naturaltime}}</a></p>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="single-blog-post d-flex align-items-center widget-post">
-                                    <!-- Post Thumbnail -->
-                                    <div class="post-thumbnail">
-                                        <img src="/static/plugins/original-master/img/blog-img/lp3.jpg" alt="">
-                                    </div>
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <a href="#" class="post-tag">Lifestyle</a>
-                                        <h4><a href="#" class="post-headline">Party people in the house</a></h4>
-                                        <div class="post-meta">
-                                            <p><a href="#">12 March</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="single-blog-post d-flex align-items-center widget-post">
-                                    <!-- Post Thumbnail -->
-                                    <div class="post-thumbnail">
-                                        <img src="/static/plugins/original-master/img/blog-img/lp4.jpg" alt="">
-                                    </div>
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <a href="#" class="post-tag">Lifestyle</a>
-                                        <h4><a href="#" class="post-headline">A sunday in the park</a></h4>
-                                        <div class="post-meta">
-                                            <p><a href="#">12 March</a></p>
-                                        </div>
-                                    </div>
-                                </div>
+                                    {% empty %}
+                                <p>暂无其他闲置</p>
+                            {% endfor %}
                             </div>
                         </div>
 
@@ -336,24 +294,8 @@
                                 </ul>
                             </div>
                         </div>
-
-                        <div class="widget rate">
-						<!-- Heading -->
-						<h5 class="widget-header text-center">为这件闲置
-						<br>
-						打分</h5>
-						<!-- Rate -->
-						<div class="starrr"></div>
-					</div>
 					<!-- Safety tips widget -->
-					<div class="widget disclaimer">
-						<h5 class="widget-header">安全提示</h5>
-						<ul>
-							<li>1.当面交易时选择空旷地方</li>
-							<li>2.在交易完成前检查物品</li>
-							<li>3.确定交易无误才付款</li>
-						</ul>
-					</div>
+
                     </div>
                 </div>
             </div>
@@ -373,54 +315,6 @@
             <!-- Single Insta Feed -->
             <div class="single-insta-feed">
                 <img src="img/instagram-img/1.png" alt="">
-                <!-- Hover Effects -->
-                <div class="hover-effects">
-                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
-                </div>
-            </div>
-            <!-- Single Insta Feed -->
-            <div class="single-insta-feed">
-                <img src="img/instagram-img/2.png" alt="">
-                <!-- Hover Effects -->
-                <div class="hover-effects">
-                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
-                </div>
-            </div>
-            <!-- Single Insta Feed -->
-            <div class="single-insta-feed">
-                <img src="img/instagram-img/3.png" alt="">
-                <!-- Hover Effects -->
-                <div class="hover-effects">
-                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
-                </div>
-            </div>
-            <!-- Single Insta Feed -->
-            <div class="single-insta-feed">
-                <img src="img/instagram-img/4.png" alt="">
-                <!-- Hover Effects -->
-                <div class="hover-effects">
-                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
-                </div>
-            </div>
-            <!-- Single Insta Feed -->
-            <div class="single-insta-feed">
-                <img src="img/instagram-img/5.png" alt="">
-                <!-- Hover Effects -->
-                <div class="hover-effects">
-                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
-                </div>
-            </div>
-            <!-- Single Insta Feed -->
-            <div class="single-insta-feed">
-                <img src="img/instagram-img/6.png" alt="">
-                <!-- Hover Effects -->
-                <div class="hover-effects">
-                    <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>
-                </div>
-            </div>
-            <!-- Single Insta Feed -->
-            <div class="single-insta-feed">
-                <img src="img/instagram-img/7.png" alt="">
                 <!-- Hover Effects -->
                 <div class="hover-effects">
                     <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa fa-instagram"></i></a>

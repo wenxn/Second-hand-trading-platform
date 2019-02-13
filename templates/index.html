@@ -99,13 +99,13 @@
                     </form>
                 </div>
                 <div class="favourite-area">
-                    <a href="#"><img src="/static/plugins/essence%202/img/core-img/heart.svg" alt=""></a>
+                    <a href="/plat/love_good/"><img src="/static/plugins/essence%202/img/core-img/heart.svg" alt=""></a>
                 </div>
                 <div class="favourite-area">
                     <a href="#"><img src="/static/plugins/essence%202/img/core-img/heart.svg" alt=""></a>
                 </div>
                 <div class="user-login-info">
-                    <a href="#"><img src="/static/plugins/essence%202/img/core-img/user.svg" alt=""></a>
+                    <a href="/accounts/myself/"><img src="/static/plugins/essence%202/img/core-img/user.svg" alt=""></a>
                 </div>
             </div>
 
@@ -252,137 +252,34 @@
                 <div class="col-12">
                     <div class="popular-products-slides owl-carousel">
 
-                        <!-- Single Product -->
+                        {% for good in good %}
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
                             <div class="product-img">
-                                <img src="/static/plugins/essence%202/img/product-img/product-1.jpg" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" src="/static/plugins/essence%202/img/product-img/product-2.jpg" alt="">
-                                <!-- Favourite -->
+                                <img src={{ good.good_photo.url }} alt="">
                                 <div class="product-favourite">
-                                    <a href="#" class="favme fa fa-heart"></a>
+                                    <a href="/plat/loved_{{ good.id }}" class="favme fa fa-heart"></a>
                                 </div>
                             </div>
                             <!-- Product Description -->
                             <div class="product-description">
-                                <span>topshop</span>
+                                <span>{{ good.starter }}</span>
                                 <a href="#">
-                                    <h6>Knot Front Mini Dress</h6>
+                                    <h6>{{ good.good_name }}</h6>
                                 </a>
-                                <p class="product-price">$80.00</p>
+                                <p class="product-price">￥{{ good.price }}</p>
 
                                 <!-- Hover Content -->
                                 <div class="hover-content">
                                     <!-- Add to Cart -->
                                     <div class="add-to-cart-btn">
-                                        <a href="#" class="btn essence-btn">Add to Cart</a>
+                                        <a href="/plat/good_{{ good.id }}/" class="btn essence-btn">查看详情</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Single Product -->
-                        <div class="single-product-wrapper">
-                            <!-- Product Image -->
-                            <div class="product-img">
-                                <img src="/static/plugins/essence%202/img/product-img/product-2.jpg" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" src="/static/plugins/essence%202/img/product-img/product-3.jpg" alt="">
-                                <!-- Favourite -->
-                                <div class="product-favourite">
-                                    <a href="#" class="favme fa fa-heart"></a>
-                                </div>
-                            </div>
-                            <!-- Product Description -->
-                            <div class="product-description">
-                                <span>topshop</span>
-                                <a href="single-product-details.html">
-                                    <h6>Poplin Displaced Wrap Dress</h6>
-                                </a>
-                                <p class="product-price">$80.00</p>
-
-                                <!-- Hover Content -->
-                                <div class="hover-content">
-                                    <!-- Add to Cart -->
-                                    <div class="add-to-cart-btn">
-                                        <a href="#" class="btn essence-btn">Add to Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Product -->
-                        <div class="single-product-wrapper">
-                            <!-- Product Image -->
-                            <div class="product-img">
-                                <img src="/static/plugins/essence%202/img/product-img/product-3.jpg" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" src="/static/plugins/essence%202/img/product-img/product-4.jpg" alt="">
-
-                                <!-- Product Badge -->
-                                <div class="product-badge offer-badge">
-                                    <span>-30%</span>
-                                </div>
-
-                                <!-- Favourite -->
-                                <div class="product-favourite">
-                                    <a href="#" class="favme fa fa-heart"></a>
-                                </div>
-                            </div>
-                            <!-- Product Description -->
-                            <div class="product-description">
-                                <span>mango</span>
-                                <a href="single-product-details.html">
-                                    <h6>PETITE Crepe Wrap Mini Dress</h6>
-                                </a>
-                                <p class="product-price"><span class="old-price">$75.00</span> $55.00</p>
-
-                                <!-- Hover Content -->
-                                <div class="hover-content">
-                                    <!-- Add to Cart -->
-                                    <div class="add-to-cart-btn">
-                                        <a href="#" class="btn essence-btn">Add to Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Product -->
-                        <div class="single-product-wrapper">
-                            <!-- Product Image -->
-                            <div class="product-img">
-                                <img src="img/product-img/product-4.jpg" alt="">
-                                <!-- Hover Thumb -->
-                                <img class="hover-img" src="img/product-img/product-5.jpg" alt="">
-
-                                <!-- Product Badge -->
-                                <div class="product-badge new-badge">
-                                    <span>New</span>
-                                </div>
-
-                                <!-- Favourite -->
-                                <div class="product-favourite">
-                                    <a href="#" class="favme fa fa-heart"></a>
-                                </div>
-                            </div>
-                            <!-- Product Description -->
-                            <div class="product-description">
-                                <span>mango</span>
-                                <a href="#">
-                                    <h6>PETITE Belted Jumper Dress</h6>
-                                </a>
-                                <p class="product-price">$80.00</p>
-
-                                <!-- Hover Content -->
-                                <div class="hover-content">
-                                    <!-- Add to Cart -->
-                                    <div class="add-to-cart-btn">
-                                        <a href="#" class="btn essence-btn">Add to Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

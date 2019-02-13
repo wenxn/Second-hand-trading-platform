@@ -1,10 +1,10 @@
-{% extends 'myself.html' %}
+{% extends 'my_good.html' %}
 {% block right %}
 			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
 				<!-- Recently Favorited -->
 				<div class="widget dashboard-container my-adslist">
 					<h3 class="widget-header">我收藏的</h3>
-
+                    {% for good in good %}
 					<table class="table table-responsive product-dashboard-table">
 						<thead>
 							<tr>
@@ -16,71 +16,56 @@
 						</thead>
 						<tbody>
 
-
-
 							<tr>
+
 								<td class="product-thumb">
-									<img width="80px" height="auto" src="/static/plugins/classimax.v-1/images/products/products-1.jpg" alt="image description"></td>
+                                    {% if good.good_id.good_photo %}
+									<img width="80px" height="auto" src={{ good.good_id.good_photo.url }}></td>
+                                        {% else %}
+
+									<img width="80px" height="auto" src="/static/images/clean.jpeg"></td>
+                            {% endif %}
 								<td class="product-details">
-									<h3 class="title">Macbook Pro 15inch</h3>
-									<span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
-									<span><strong>Posted on: </strong><time>Jun 27, 2017</time> </span>
-									<span class="status active"><strong>Status</strong>Active</span>
-									<span class="location"><strong>Location</strong>Dhaka,Bangladesh</span>
+									<h3 class="title">{{ good.good_id.good_name }}</h3>
+                                <span><strong>价格</strong>{{ good.good_id.price }}</span>
+									<span><strong>浏览数</strong>{{ good.good_id.views }}</span>
+									<span><strong>发布者 </strong><time>{{ good.good_id.starter }}</time> </span>
+                                    {% if  good.good_id.online == 1 %}
+									<span class="status active"><strong>包邮</strong> active </span>
+                                    {% else %}
+									<span class="status active"><strong>包邮</strong> inactive </span>
+                                    {% endif %}
+                                {% if  good.good_id.lower == 1 %}
+									<span class="status active"><strong>议价</strong> active </span>
+                                    {% else %}
+									<span class="status active"><strong>议价</strong> inactive </span>
+                                    {% endif %}
 								</td>
-								<td class="product-category"><span class="categories">Laptops</span></td>
+								<td class="product-category"><span class="categories">{{ good.good_id.plat }}</span></td>
 								<td class="action" data-title="Action">
 									<div class="">
 										<ul class="list-inline justify-content-center">
 											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="view" href="">
+												<a data-toggle="tooltip" data-placement="top" title="查看详情" class="view" href="/plat/good_{{ good.good_id.id }}/">
 													<i class="fa fa-eye"></i>
-												</a>		
-											</li>
-											<li class="list-inline-item">
-												<a class="edit" href="">
-													<i class="fa fa-pencil"></i>
-												</a>		
-											</li>
-											<li class="list-inline-item">
-												<a class="delete" href="">
-													<i class="fa fa-trash"></i>
 												</a>
 											</li>
 										</ul>
 									</div>
+
 								</td>
 							</tr>
-
-
-
-
 						</tbody>
 					</table>
+                    {% empty %}
+                    <p>无收藏闲置</p>
+                    <p>
+                        <a href="/">  去看看？
+                        </a>
+                    </p>
+                        {% endfor %}
 
-					
 				</div>
 			</div>
-		</div>
-		<!-- Row End -->
-	</div>
-	<!-- Container End -->
-</section>
 {% endblock %}
 
-{% block js %}
-  <script src="/static/plugins/classimax.v-1/plugins/jquery/jquery.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/jquery-ui/jquery-ui.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/tether/js/tether.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/raty/jquery.raty-fa.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/bootstrap/dist/js/popper.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/slick-carousel/slick/slick.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/fancybox/jquery.fancybox.pack.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/smoothscroll/SmoothScroll.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-  <script src="/static/plugins/classimax.v-1/js/scripts.js"></script>
-
-{% endblock %}

@@ -1,12 +1,13 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from django.http import HttpResponse
 from django.utils import timezone
-from .models import Plat,Good,Post
-from .forms import goods_form,PostForm
+from .models import Plat,Good,Post,love
+from .forms import goods_form
 from plat import models
 from accounts.models import UserInfo
 from django.contrib.auth.decorators import login_required
 from utils.pagination import Pagination
+from django.http import JsonResponse
+from django.forms.models import model_to_dict
 
 
 # Create your views here.
@@ -29,7 +30,6 @@ def add_goods(request):
     user = UserInfo.objects.filter(username=user).first()
     if request.method == "POST":
         form = goods_form(request.POST,request.FILES)
-        print(form)
         if form.is_valid():
             data = {
             'starter': user,
@@ -63,12 +63,18 @@ def del_goods(request,id):
     goods.delete()
     return redirect("/plat/my_good")
 
+@login_required
 def good_detail(request,id):
     goods = models.Good.objects.filter(id=id)
     good = models.Good.objects.filter(id=id).first()
     post_list = models.Post.objects.filter(topic=good).all()
-    username = request.user
+    username = good.starter
+    user = UserInfo.objects.filter(username=username).first()
+    user_goods = models.Good.objects.filter(starter=user)
     userdetail = UserInfo.objects.filter(username=username).first()
+    love_user = request.user
+    love_user = UserInfo.objects.filter(username=love_user).first()
+    fav = models.love.objects.filter(user_id=love_user, good_id=good).first()
     good.views +=1
     good.save()
 
@@ -77,7 +83,6 @@ def good_detail(request,id):
         good = models.Good.objects.filter(id=id).first()
         username = request.user
         userreal = UserInfo.objects.filter(username=username).first()
-        print(userreal)
         post = Post()
         post.message = message
         post.updated_at = timezone.now()
@@ -85,31 +90,66 @@ def good_detail(request,id):
         post.topic = good
         post.save()
         return redirect("/plat/good_%s" % id)
-    return render(request, 'good_details.html', {'goods':goods,'userdetail':userdetail,'post_list':post_list})
+    return render(request, 'good_details.html', {'goods':goods,'userdetail':userdetail,'post_list':post_list,'user_goods':user_goods,'thisgood':good,'fav':fav})
 
 
 def home(request):
     plats = Plat.objects.all()
-    return render(request, 'index.html', {'plats': plats})
+    good = models.Good.objects.filter()
+    return render(request, 'index.html', {'plats': plats,'good':good})
+
+def loved(request,id):
+    good = models.Good.objects.filter(id=id).first()
+    loved= love()
+    username = request.user
+    user = UserInfo.objects.filter(username=username).first()
+    loved.user_id = user
+    loved.good_id = good
+    loved.save()
+    return redirect("/plat/good_%s" % id)
+
+def unloved(request,id):
+    good = models.Good.objects.filter(id=id).first()
+    username = request.user
+    user = UserInfo.objects.filter(username=username).first()
+    fav = models.love.objects.filter(user_id=user,good_id=good)
+    fav.delete()
+    return redirect("/plat/good_%s" % id)
 
 def love_goods(request):
-    return render(request, 'love_good.html')
+    username = request.user
+    userdetail = UserInfo.objects.filter(username=username).first()
+    goods = models.Good.objects.filter(starter=userdetail)
+    good = []
+    fav = models.love.objects.filter(user_id=userdetail)
+    fav_self = models.love.objects.filter(user_id=userdetail).count()
+    good_self = models.Good.objects.filter(starter=userdetail).count()
+    if fav:
+       good = fav
+    return render(request, 'love_good.html', {'userdetail':userdetail,'goods': goods,'good':good,'fav_self':fav_self,'good_self':good_self})
 
 def my_good(request):
     user = request.user
     user = UserInfo.objects.filter(username=user).first()
+    username = request.user
+    userdetail = UserInfo.objects.filter(username=username).first()
+    fav_self = models.love.objects.filter(user_id=userdetail).count()
     count = models.Good.objects.filter(starter=user).count()
     p = request.GET.get('p')
     path_info = request.META.get('PATH_INFO')
     req = Pagination(p, count, per_page_count=3)
     page_str = req.page_str(path_info)
     goods = models.Good.objects.filter(starter=user).all()[req.start:req.end]
-    return render(request, 'my_good.html', {'goods': goods,"page_str": page_str})
+    good_self = models.Good.objects.filter(starter=userdetail).count()
+    return render(request, 'my_good.html', {'userdetail':userdetail,'goods': goods,"page_str": page_str,'fav_self':fav_self,'good_self':good_self})
 
+@login_required
 def delete_post(request,id):
     post = models.Post.objects.filter(id=id).first()
+    id = post.topic.id
     post.delete()
     return redirect("/plat/good_%s" % id)
 
 def reply_post(request):
+    # 二级回复
     pass
