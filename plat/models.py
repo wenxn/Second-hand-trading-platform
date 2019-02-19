@@ -1,5 +1,7 @@
 from django.db import models
 from accounts.models import UserInfo
+from taggit.managers import TaggableManager
+
 import uuid
 import os
 from secondhand_platform.settings import MEDIA_ROOT
@@ -23,6 +25,7 @@ def user_directory_path(instance, filename):
 
 
 class Good(models.Model):
+    tags = TaggableManager()
     good_name = models.CharField(verbose_name="闲置名称",max_length=255)
     good_description = models.CharField(verbose_name="闲置描述",max_length=100)
     last_updated = models.DateTimeField(auto_now_add=True)

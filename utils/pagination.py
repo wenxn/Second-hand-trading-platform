@@ -62,9 +62,9 @@ class Pagination(object):
 
         for i in range(int(start_index), int(end_index)):
             if i == self.current_page:
-                temp = '<li class="active"><a href="%s?p=%s">%s</a></li>' % (base_url, i, i)
+                temp = '<li class="page-item" active><a class="page-link" href="%s?p=%s">%s</a></li>' % (base_url, i, i)
             else:
-                temp = '<li><a href="%s?p=%s">%s</a></li>' % (base_url, i, i)
+                temp = '<li class="page-item"><a class="page-link" href="%s?p=%s">%s</a></li>' % (base_url, i, i)
             page_list.append(temp)
 
         if self.current_page == self.total_count:

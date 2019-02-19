@@ -127,7 +127,7 @@
                         <div class="author-info">
                             <div class="line"></div>
                             <span class="author-role">发布者</span>
-                            <h4><a href="#" class="author-name">{{ thisgood.starter.username }}</a></h4>
+                            <h4><a href="/accounts/user_{{ thisgood.starter.nid }}" class="author-name">{{ thisgood.starter.username }}</a></h4>
                             <p>{{ thisgood.starter.introduce }}</p>
                         </div>
                     </div>
@@ -155,12 +155,9 @@
 						</ul>
 						<div class="tab-content col-md-24" id="pills-tabContent">
 							<div class="tab-pane fade show active" id="good_detail" role="tabpanel" aria-labelledby="good_detail-tab">
-								<h3 class="tab-title">闲置</h3>
+								<h3 class="tab-title">闲置详情</h3>
 								<p> 这是个物品的详情页 </p>
                                 <p>{{ good.good_description }}</p>
-
-								<iframe width="100%" height="400" src="https://www.youtube.com/embed/LUH7njvhydE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-
 
 							</div>
 							<div class="tab-pane fade" id="comment" role="tabpanel" aria-labelledby="comment-tab">

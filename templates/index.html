@@ -34,31 +34,25 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul>
-                            <li><a href="#">闲置类型</a>
+                            <li><a href="/">主页</a>
                                 <div class="megamenu">
                                     <ul class="single-mega cn-col-4">
-                                        <li class="title">书籍教材</li>
-                                        <li><a href="shop.html">Dresses</a></li>
-                                        <li><a href="shop.html">Blouses &amp; Shirts</a></li>
-                                        <li><a href="shop.html">T-shirts</a></li>
-                                        <li><a href="shop.html">Rompers</a></li>
-                                        <li><a href="shop.html">Bras &amp; Panties</a></li>
+                                        <li class="title">闲置类型</li>
+                                        <li><a href="/plat/all_goods?plat=书籍教材">书籍教材</a></li>
+                                        <li><a href="/plat/all_goods?plat=电子设备">电子设备</a></li>
+                                        <li><a href="/plat/all_goods?plat=生活用品">生活用品</a></li>
                                     </ul>
                                     <ul class="single-mega cn-col-4">
-                                        <li class="title">电子设备</li>
-                                        <li><a href="shop.html">T-Shirts</a></li>
-                                        <li><a href="shop.html">Polo</a></li>
-                                        <li><a href="shop.html">Shirts</a></li>
-                                        <li><a href="shop.html">Jackets</a></li>
-                                        <li><a href="shop.html">Trench</a></li>
+                                        <li class="title">闲置标签</li>
+                                        <li><a href="/plat/all_goods">八成新</a></li>
+                                        <li><a href="/plat/all_goods">全新</a></li>
+                                        <li><a href="/plat/all_goods">校内交易</a></li>
                                     </ul>
                                     <ul class="single-mega cn-col-4">
-                                        <li class="title">生活用品</li>
-                                        <li><a href="shop.html">Dresses</a></li>
-                                        <li><a href="shop.html">Shirts</a></li>
-                                        <li><a href="shop.html">T-shirts</a></li>
-                                        <li><a href="shop.html">Jackets</a></li>
-                                        <li><a href="shop.html">Trench</a></li>
+                                        <li class="title">闲置筛选</li>
+                                        <li><a href="/plat/all_goods?time_order=1">最近发布</a></li>
+                                        <li><a href="/plat/all_goods?count_order=1">热门闲置</a></li>
+                                        <li><a href="/plat/all_goods?price_order=1">低价闲置</a></li>
                                     </ul>
                                     <div class="single-mega cn-col-4">
                                         <img src="/static/plugins/essence%202/img/bg-img/bg-6.jpg" alt="">
@@ -93,8 +87,9 @@
             <!-- Header Meta Data -->
             <div class="header-meta d-flex clearfix justify-content-end">
                 <div class="search-area">
-                    <form action="#" method="post">
-                        <input type="search" name="search" id="headerSearch" placeholder="search">
+                    <form action="/plat/all_goods" method="get">
+                        {% csrf_token %}
+                        <input type="text" name="name" placeholder="搜索">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
                 </div>
@@ -116,81 +111,6 @@
     {% block content %}
     <div class="cart-bg-overlay"></div>
 
-    <div class="right-side-cart-area">
-        <div class="cart-button">
-            <a href="#" id="rightSideCart"><img src="/static/plugins/essence%202/img/core-img/bag.svg" alt=""> <span>3</span></a>
-        </div>
-
-        <div class="cart-content d-flex">
-
-            <!-- Cart List Area -->
-            <div class="cart-list">
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="/static/plugins/essence%202/img/product-img/product-1.jpg" class="cart-thumb" alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">Mango</span>
-                            <h6>Button Through Strap Mini Dress</h6>
-                            <p class="size">Size: S</p>
-                            <p class="color">Color: Red</p>
-                            <p class="price">$45.00</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="/static/plugins/essence%202/img/product-img/product-2.jpg" class="cart-thumb" alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">Mango</span>
-                            <h6>Button Through Strap Mini Dress</h6>
-                            <p class="size">Size: S</p>
-                            <p class="color">Color: Red</p>
-                            <p class="price">$45.00</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="/static/plugins/essence%202/img/product-img/product-3.jpg" class="cart-thumb" alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">Mango</span>
-                            <h6>Button Through Strap Mini Dress</h6>
-                            <p class="size">Size: S</p>
-                            <p class="color">Color: Red</p>
-                            <p class="price">$45.00</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Cart Summary -->
-            <div class="cart-amount-summary">
-
-                <h2>Summary</h2>
-                <ul class="summary-table">
-                    <li><span>subtotal:</span> <span>$274.00</span></li>
-                    <li><span>delivery:</span> <span>Free</span></li>
-                    <li><span>discount:</span> <span>-15%</span></li>
-                    <li><span>total:</span> <span>$232.00</span></li>
-                </ul>
-                <div class="checkout-btn mt-100">
-                    <a href="#" class="btn essence-btn">check out</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <section class="welcome_area bg-img background-overlay" style="background-image: url(/static/images/clean.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
@@ -198,7 +118,7 @@
                     <div class="hero-content">
                         <h6>您好</h6>
                         <h4>欢迎来到广工大二手交易平台</h4>
-                        <a href="#" class="btn essence-btn">查看更多的闲置</a>
+                        <a href="/plat/all_goods" class="btn essence-btn">查看更多的闲置</a>
                     </div>
                 </div>
             </div>
@@ -208,27 +128,24 @@
     <div class="top_catagory_area section-padding-80 clearfix">
         <div class="container">
             <div class="row justify-content-center">
-                <!-- Single Catagory -->
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img" style="background-image: url(/static/images/book.jpeg);">
                         <div class="catagory-content">
-                            <a href="#">书籍教材</a>
+                            <a href="/plat/all_goods?plat=书籍教材">书籍教材</a>
                         </div>
                     </div>
                 </div>
-                <!-- Single Catagory -->
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img" style="background-image: url(/static/images/phone.jpeg);">
                         <div class="catagory-content">
-                            <a href="#">电子设备</a>
+                            <a href="/plat/all_goods?plat=电子设备">电子设备</a>
                         </div>
                     </div>
                 </div>
-                <!-- Single Catagory -->
                 <div class="col-12 col-sm-6 col-md-4">
-                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img" style="background-image: url(/static/plugins/essence%202/img/bg-img/bg-4.jpg);">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img" style="background-image: url(/static/images/bag.jpg);">
                         <div class="catagory-content">
-                            <a href="#">生活用品</a>
+                            <a href="/plat/all_goods?plat=生活用品">生活用品</a>
                         </div>
                     </div>
                 </div>
@@ -256,7 +173,7 @@
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
                             <div class="product-img">
-                                <img src={{ good.good_photo.url }} alt="">
+                                <img src={{ good.good_photo.url }}>
                                 <div class="product-favourite">
                                     <a href="/plat/loved_{{ good.id }}" class="favme fa fa-heart"></a>
                                 </div>

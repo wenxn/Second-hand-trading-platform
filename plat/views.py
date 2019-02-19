@@ -6,11 +6,121 @@ from plat import models
 from accounts.models import UserInfo
 from django.contrib.auth.decorators import login_required
 from utils.pagination import Pagination
+from django.db.models import Q
 from django.http import JsonResponse
 from django.forms.models import model_to_dict
 
 
 # Create your views here.
+def all_good(request):
+    count = models.Good.objects.filter().count()
+    p = request.GET.get('p')
+    path_info = request.META.get('PATH_INFO')
+    req = Pagination(p, count, per_page_count=9)
+    page_str = req.page_str(path_info)
+    goods = models.Good.objects.filter().all()[req.start:req.end]
+
+    p1 = models.Good.objects.filter(plat='书籍教材').count()
+    p2 = models.Good.objects.filter(plat='电子设备').count()
+    p3 = models.Good.objects.filter(plat='生活用品').count()
+    p_counts = {
+        'p1': p1,
+        'p2': p2,
+        'p3': p3,
+    }
+
+    c1 = models.UserInfo.objects.filter(Institute='信息工程学院').count()
+    c2 = models.UserInfo.objects.filter(Institute='自动化学院').count()
+    c3 = models.UserInfo.objects.filter(Institute='计算机学院').count()
+    c4 = models.UserInfo.objects.filter(Institute='外国语学院').count()
+    c5 = models.UserInfo.objects.filter(Institute='轻化学院').count()
+    c6 = models.UserInfo.objects.filter(Institute='物理学院').count()
+    counts = {
+        'c1': c1,
+        'c2': c2,
+        'c3': c3,
+        'c4': c4,
+        'c5': c5,
+        'c6': c6,
+    }
+
+    name = request.GET.get('name')
+    if name:
+        count = models.Good.objects.filter(good_name=name).count()
+        p = request.GET.get('p')
+        path_info = request.META.get('PATH_INFO')
+        req = Pagination(p, count, per_page_count=9)
+        page_str = req.page_str(path_info)
+        goods = models.Good.objects.filter(good_name=name).all()[req.start:req.end]
+
+    plat = request.GET.get('plat')
+    if plat:
+        count = models.Good.objects.filter(plat=plat).count()
+        p = request.GET.get('p')
+        path_info = request.META.get('PATH_INFO')
+        req = Pagination(p, count, per_page_count=9)
+        page_str = req.page_str(path_info)
+        goods = models.Good.objects.filter(plat=plat).all()[req.start:req.end]
+
+    username = request.GET.get('user')
+    user = UserInfo.objects.filter(username=username).first()
+    if user:
+        count = models.Good.objects.filter(starter=user).count()
+        p = request.GET.get('p')
+        path_info = request.META.get('PATH_INFO')
+        req = Pagination(p, count, per_page_count=9)
+        page_str = req.page_str(path_info)
+        goods = models.Good.objects.filter(starter=user).all()[req.start:req.end]
+
+    online = request.GET.get('online')
+    if online:
+        count = models.Good.objects.filter(online=1).count()
+        p = request.GET.get('p')
+        path_info = request.META.get('PATH_INFO')
+        req = Pagination(p, count, per_page_count=9)
+        page_str = req.page_str(path_info)
+        goods = models.Good.objects.filter(online=1).all()[req.start:req.end]
+
+    argue = request.GET.get('argue')
+    if argue:
+        count = models.Good.objects.filter(lower=1).count()
+        p = request.GET.get('p')
+        path_info = request.META.get('PATH_INFO')
+        req = Pagination(p, count, per_page_count=9)
+        page_str = req.page_str(path_info)
+        goods = models.Good.objects.filter(lower=1).all()[req.start:req.end]
+
+    time_order = request.GET.get('time_order')
+    if time_order:
+        count = models.Good.objects.filter().count()
+        p = request.GET.get('p')
+        path_info = request.META.get('PATH_INFO')
+        req = Pagination(p, count, per_page_count=9)
+        page_str = req.page_str(path_info)
+        goods = models.Good.objects.filter().order_by('-last_updated').all()[req.start:req.end]
+
+    count_order = request.GET.get('count_order')
+    if count_order:
+        count = models.Good.objects.filter().count()
+        p = request.GET.get('p')
+        path_info = request.META.get('PATH_INFO')
+        req = Pagination(p, count, per_page_count=9)
+        page_str = req.page_str(path_info)
+        goods = models.Good.objects.filter().order_by('views').all()[req.start:req.end]
+
+    price_order = request.GET.get('price_order')
+    if price_order:
+        count = models.Good.objects.filter().count()
+        p = request.GET.get('p')
+        path_info = request.META.get('PATH_INFO')
+        req = Pagination(p, count, per_page_count=9)
+        page_str = req.page_str(path_info)
+        goods = models.Good.objects.filter().order_by('price').all()[req.start:req.end]
+
+    return render(request, 'allgoods.html', {'goods': goods,"page_str": page_str,'counts':counts,'p_counts':p_counts})
+
+
+
 @login_required
 def plat_goods(request):
     user = request.user

@@ -15,7 +15,7 @@ class user_form(ModelForm):
 class user_detail_form(ModelForm):
     class Meta:
         model = UserInfo
-        fields = ('Institute','student_id','email','introduce','photo')
+        fields = ('Institute','student_id','email','introduce')
 
         widgets = {
             'Institute': TextInput(attrs={"class": "form-control"}),

@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     re_path(r'^$', views.plat_goods, name="plat_goods"),
+    re_path(r'^all_goods$', views.all_good, name="all_good"),
     re_path(r'^add_goods/$', views.add_goods, name="add_goods"),
     re_path(r'^edit_(?P<id>\d+)/$', views.edit_goods, name="edit_goods"),
     re_path(r'^del_(?P<id>\d+)/$', views.del_goods, name="del_goods"),

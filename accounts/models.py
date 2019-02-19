@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 import uuid
+import os
+from secondhand_platform import settings
 
 # Create your models here.
 
@@ -23,3 +25,9 @@ class UserInfo(models.Model):
         verbose_name_plural = '用户'
     def __str__(self):
         return self.username
+
+    def get_avatar(self):
+        if not self.photo:
+            return '/static/images/clean.jpeg'
+        else:
+            return os.path.join(settings.MEDIA_URL, self.photo.name)

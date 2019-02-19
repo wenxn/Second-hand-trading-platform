@@ -1,6 +1,7 @@
 from django import forms
 from django.forms import ModelForm,TextInput,Select,FileInput
 from .models import Post, Good
+from accounts.models import UserInfo
 
 '''
 class NewPlatForm(forms.ModelForm):
@@ -37,4 +38,5 @@ class PostForm(forms.ModelForm):
                               widget=forms.Textarea(attrs={'class': 'comment-input',}))
     class Meta:
         model = Post
-        fields = ['message', ]
+        fields = ['message' ]
+
