@@ -66,7 +66,7 @@ def myself_edit(request):
     return render(request, 'myself_edit.html',{'form':form,'user':user,'user_detail':user_detail,'fav_self':fav_self,'good_self':good_self})
 
 @login_required
-def headimg(request):
+def edit_img(request):
     if request.method == 'POST':
         img = request.FILES.get('img_file')
         user = request.user
@@ -111,3 +111,11 @@ def user_profile(request,id):
     fav_self = love.objects.filter(user_id=userdetail).count()
     good_self = Good.objects.filter(starter=userdetail).count()
     return render(request, 'user.html',{'user':user,'form':form,'userdetail':userdetail,'fav_self':fav_self,'good_self':good_self})
+
+def user_good(request,id):
+    user = request.user
+    userdetail = UserInfo.objects.filter(nid=id).first()
+    form = user_detail_form(instance=userdetail)
+    good_self = Good.objects.filter(starter=userdetail).count()
+    goods = Good.objects.filter(starter=userdetail).all()
+    return render(request, 'user_good.html',{'goods':goods,'user':user,'form':form,'userdetail':userdetail,'good_self':good_self})

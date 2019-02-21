@@ -20,7 +20,7 @@
 
     <div class="right-side-cart-area" style="margin-top:100px">
         <div class="cart-button">
-            <a href="#" id="rightSideCart"><img src="/static/plugins/essence%202/img/core-img/bag.svg" alt=""> <span>3</span></a>
+            <a href="#"><img src="/static/plugins/essence%202/img/core-img/bag.svg" alt=""> <span>3</span></a>
         </div>
 
         <div class="cart-content d-flex">
@@ -73,11 +73,16 @@
     <section class="single_product_details_area d-flex align-items-center">
 
                 {% for good in goods %}
-                <img src={{ good.good_photo.url }} alt="">
+    <div class="container">
+         <div class="row">
+              <div class="col-10 col-md-4 col-lg-5 ">
+              <img src={{ good.good_photo.url }} width="100%" height="auto">
+              </div>
                 {% endfor %}
 
         {% for good in goods %}
-        <div class="single_product_desc clearfix">
+            <div class="col-10 col-md-8 col-lg-6">
+            <div class="single_product_desc clearfix">
 
             <a href="#">
                 <h2>{{ good.good_name }}</h2>
@@ -113,6 +118,9 @@
 
 
         </div>
+            </div>
+        </div>
+            </div>
     </section>
 
 <div class="single-blog-wrapper section-padding-0-100">
@@ -245,11 +253,6 @@
 					</div>
 
                         <div class="sidebar-widget-area">
-                            <h5 class="title">猜你喜欢</h5>
-                            <a href="#"><img src="/static/plugins/original-master/img/bg-img/add.gif" alt=""></a>
-                        </div>
-
-                        <div class="sidebar-widget-area">
                             <h5 class="title">她最近发布的闲置</h5>
 
                             <div class="widget-content">
@@ -264,7 +267,7 @@
                                     <!-- Post Content -->
                                     <div class="post-content">
                                         <a href="#" class="post-tag">{{ good.plat }}</a>
-                                        <h4><a href="#" class="post-headline">{{ good.good_name }}</a></h4>
+                                        <h4><a href="/plat/good_{{ good.id }}/" class="post-headline">{{ good.good_name }}</a></h4>
                                         <div class="post-meta">
                                             <p><a href="#">{{ good.last_updated | naturaltime}}</a></p>
                                         </div>

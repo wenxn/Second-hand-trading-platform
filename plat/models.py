@@ -43,7 +43,6 @@ class Good(models.Model):
         (2, '不支持'),
     )
     lower = models.IntegerField(verbose_name="议价", choices=lower_choices, default=1)
-    # good_photo = models.ImageField(upload_to= user_directory_path,verbose_name='图片', null=True, blank=True)
     good_photo = models.ImageField(upload_to='', verbose_name='图片', null=True, blank=True)
 
     def __str__(self):
@@ -53,11 +52,20 @@ class Post(models.Model):
     message = models.TextField(max_length=4000)
     topic = models.ForeignKey(Good, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(null=True)
     created_by = models.ForeignKey(UserInfo, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.message
+        return '{0}-{1}'.format(self.created_by, self.created_at.strftime("%Y-%m-%d %H:%M:%S"))
+
+class PostReply(models.Model):
+    content = models.TextField()
+    comment = models.ForeignKey(Post, related_name='comment_replies',on_delete=models.CASCADE)
+    author = models.ForeignKey(UserInfo, related_name='user_comment_replies', null=True, blank=True,on_delete=models.CASCADE)
+    to = models.ForeignKey(UserInfo, related_name='user_replied', null=True, blank=True, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return '{0}->{1}'.format(self.author, self.to)
 
 class love(models.Model):
     user_id = models.ForeignKey(UserInfo, verbose_name='姓名',on_delete=models.CASCADE)
