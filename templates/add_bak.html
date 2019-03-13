@@ -8,7 +8,8 @@
 
         <!-- Cart Button -->
         <div class="cart-button">
-            <a href="#" id="rightSideCart"><img src="/static/plugins/essence%202/img/core-img/bag.svg" alt=""> <span>3</span></a>
+            <a href="#" id="rightSideCart"><img src="/static/plugins/essence%202/img/core-img/bag.svg" alt="">
+                <span>3</span></a>
         </div>
 
         <div class="cart-content d-flex">
@@ -21,7 +22,7 @@
                         <img src="/static/plugins/essence%202/img/product-img/product-1.jpg" class="cart-thumb" alt="">
                         <!-- Cart Item Desc -->
                         <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                            <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
                             <span class="badge">Mango</span>
                             <h6>Button Through Strap Mini Dress</h6>
                             <p class="size">Size: S</p>
@@ -37,7 +38,7 @@
                         <img src="/static/plugins/essence%202/img/product-img/product-2.jpg" class="cart-thumb" alt="">
                         <!-- Cart Item Desc -->
                         <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                            <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
                             <span class="badge">Mango</span>
                             <h6>Button Through Strap Mini Dress</h6>
                             <p class="size">Size: S</p>
@@ -53,7 +54,7 @@
                         <img src="/static/plugins/essence%202/img/product-img/product-3.jpg" class="cart-thumb" alt="">
                         <!-- Cart Item Desc -->
                         <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                            <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
                             <span class="badge">Mango</span>
                             <h6>Button Through Strap Mini Dress</h6>
                             <p class="size">Size: S</p>
@@ -81,7 +82,8 @@
         </div>
     </div>
 
-    <div class="breadcumb_area bg-img" style="background-image: url(/static/plugins/essence%202/img/bg-img/breadcumb.jpg);">
+    <div class="breadcumb_area bg-img"
+         style="background-image: url(/static/plugins/essence%202/img/bg-img/breadcumb.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -107,21 +109,22 @@
                         <form method="post" href="add.html" enctype="multipart/form-data">
                             {% csrf_token %}
                             {% for field in form %}
-                        {% if field.name == 'plat' %}
-                        <div class="form-group">
-                        <label for="{{ field.name }}" class="col-sm-2 control-label">{{ field.label }}</label>
-                         {% get_plat %}
-                        </div>
+                                {% if field.name == 'plat' %}
+                                    <div class="form-group">
+                                        <label for="{{ field.name }}"
+                                               class="col-sm-2 control-label">{{ field.label }}</label>
+                                        {% get_plat %}
+                                    </div>
                                 {% else %}
                                     <div class="form-group">
-                                    <label for="{{ field.name }}">{{ field.label }}</label>
-                                    {{ field }}
-                                </div>
+                                        <label for="{{ field.name }}">{{ field.label }}</label>
+                                        {{ field }}
+                                    </div>
                                 {% endif %}
                             {% endfor %}
-                        <div class="box-footer">
-                <button type="submit" class="btn btn-info pull-right">提交</button>
-              </div>
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-info pull-right">提交</button>
+                            </div>
 
                         </form>
 
@@ -149,10 +152,13 @@
                             <div class="card">
                                 <div class="card-header" role="tab" id="headingTwo">
                                     <h6 class="mb-0">
-                                        <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-circle-o mr-3"></i> 支持微信支付 </a>
+                                        <a class="collapsed" data-toggle="collapse" href="#collapseTwo"
+                                           aria-expanded="false" aria-controls="collapseTwo"><i
+                                                class="fa fa-circle-o mr-3"></i> 支持微信支付 </a>
                                     </h6>
                                 </div>
-                                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo"
+                                     data-parent="#accordion">
                                     <div class="card-body">
                                         <p>微信账号</p>
                                     </div>
@@ -161,10 +167,13 @@
                             <div class="card">
                                 <div class="card-header" role="tab" id="headingThree">
                                     <h6 class="mb-0">
-                                        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i class="fa fa-circle-o mr-3"></i>支持支付宝支付</a>
+                                        <a class="collapsed" data-toggle="collapse" href="#collapseThree"
+                                           aria-expanded="false" aria-controls="collapseThree"><i
+                                                class="fa fa-circle-o mr-3"></i>支持支付宝支付</a>
                                     </h6>
                                 </div>
-                                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree"
+                                     data-parent="#accordion">
                                     <div class="card-body">
                                         <p>支付宝账号</p>
                                     </div>

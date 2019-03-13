@@ -1,108 +1,109 @@
 {% extends 'myself.html' %}
 {% block right %}
-			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
-				<div class="widget dashboard-container my-adslist">
-					<h3 class="widget-header">我发布的</h3>
-                {% for good in goods %}
-					<table class="table table-responsive product-dashboard-table">
-						<thead>
-							<tr>
-								<th>闲置</th>
-								<th>闲置描述</th>
-								<th class="text-center">所属闲置类</th>
-								<th class="text-center">可操作</th>
-							</tr>
-						</thead>
-						<tbody>
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+        <div class="widget dashboard-container my-adslist">
+            <h3 class="widget-header">我发布的</h3>
+            {% for good in goods %}
+                <table class="table table-responsive product-dashboard-table">
+                    <thead>
+                    <tr>
+                        <th>闲置</th>
+                        <th>闲置描述</th>
+                        <th class="text-center">所属闲置类</th>
+                        <th class="text-center">可操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-							<tr>
+                    <tr>
 
-								<td class="product-thumb">
-                                    {% if good.good_photo %}
-									<img width="80px" height="auto" src={{ good.good_photo.url }}></td>
-                                        {% else %}
+                        <td class="product-thumb">
+                            {% if good.good_photo %}
+                                <img width="80px" height="auto" src={{ good.good_photo.url }}></td>
+                            {% else %}
 
-									<img width="80px" height="auto" src="/static/images/clean.jpeg"></td>
+                                <img width="80px" height="auto" src="/static/images/clean.jpeg"></td>
                             {% endif %}
-								<td class="product-details">
-									<h3 class="title">{{ good.good_name }}</h3>
-                                <span><strong>价格</strong>{{ good.price }}</span>
-									<span><strong>浏览数</strong>{{ good.views }}</span>
-									<span><strong>发布者 </strong><time>{{ good.starter }}</time> </span>
-                                    {% if  good.online == 1 %}
-									<span class="status active"><strong>包邮</strong> active </span>
-                                    {% else %}
-									<span class="status active"><strong>包邮</strong> inactive </span>
-                                    {% endif %}
-                                {% if  good.lower == 1 %}
-									<span class="status active"><strong>议价</strong> active </span>
-                                    {% else %}
-									<span class="status active"><strong>议价</strong> inactive </span>
-                                    {% endif %}
-								</td>
-								<td class="product-category"><span class="categories">{{ good.plat }}</span></td>
-								<td class="action" data-title="Action">
-									<div class="">
-										<ul class="list-inline justify-content-center">
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="查看详情" class="view" href="/plat/good_{{ good.id }}/">
-													<i class="fa fa-eye"></i>
-												</a>
-											</li>
-											<li class="list-inline-item">
-												<a class="edit" href="/plat/edit_{{ good.id }}/">
-													<i class="fa fa-pencil"></i>
-												</a>
-											</li>
-											<li class="list-inline-item">
-												<a class="delete" href="/plat/del_{{ good.id }}/">
-													<i class="fa fa-trash"></i>
-												</a>
-											</li>
-										</ul>
-									</div>
+                        <td class="product-details">
+                            <h3 class="title">{{ good.good_name }}</h3>
+                            <span><strong>价格</strong>{{ good.price }}</span>
+                            <span><strong>浏览数</strong>{{ good.views }}</span>
+                            <span><strong>发布者 </strong><time>{{ good.starter }}</time> </span>
+                            {% if  good.online == 1 %}
+                                <span class="status active"><strong>包邮</strong> active </span>
+                            {% else %}
+                                <span class="status active"><strong>包邮</strong> inactive </span>
+                            {% endif %}
+                            {% if  good.lower == 1 %}
+                                <span class="status active"><strong>议价</strong> active </span>
+                            {% else %}
+                                <span class="status active"><strong>议价</strong> inactive </span>
+                            {% endif %}
+                        </td>
+                        <td class="product-category"><span class="categories">{{ good.plat }}</span></td>
+                        <td class="action" data-title="Action">
+                            <div class="">
+                                <ul class="list-inline justify-content-center">
+                                    <li class="list-inline-item">
+                                        <a data-toggle="tooltip" data-placement="top" title="查看详情" class="view"
+                                           href="/plat/good_{{ good.id }}/">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="edit" href="/plat/edit_{{ good.id }}/">
+                                            <i class="fa fa-pencil"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="delete" href="/plat/del_{{ good.id }}/">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
 
-								</td>
-							</tr>
-						</tbody>
-					</table>
-                    {% empty %}
-                    <p>无发布闲置</p>
-                    <p>
-                        <a href="/plat/add_goods/">  去发布？
-                        </a>
-                    </p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            {% empty %}
+                <p>无发布闲置</p>
+                <p>
+                    <a href="/plat/add_goods/"> 去发布？
+                    </a>
+                </p>
 
-                        {% endfor %}
+            {% endfor %}
 
 
-				</div>
-            <div class="box-footer clearfix">
-              <ul class="pagination pagination-sm pull-right">
-               {{ page_str }}
-           </ul>
-           </div>
-			</div>
-		</div>
-		<!-- Row End -->
-	</div>
-	<!-- Container End -->
-</section>
+        </div>
+        <div class="box-footer clearfix">
+            <ul class="pagination pagination-sm pull-right">
+                {{ page_str }}
+            </ul>
+        </div>
+    </div>
+    </div>
+    <!-- Row End -->
+    </div>
+    <!-- Container End -->
+    </section>
 {% endblock %}
 
 {% block js %}
-  <script src="/static/plugins/classimax.v-1/plugins/jquery/jquery.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/jquery-ui/jquery-ui.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/tether/js/tether.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/raty/jquery.raty-fa.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/bootstrap/dist/js/popper.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/slick-carousel/slick/slick.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/fancybox/jquery.fancybox.pack.js"></script>
-  <script src="/static/plugins/classimax.v-1/plugins/smoothscroll/SmoothScroll.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-  <script src="/static/plugins/classimax.v-1/js/scripts.js"></script>
+    <script src="/static/plugins/classimax.v-1/plugins/jquery/jquery.min.js"></script>
+    <script src="/static/plugins/classimax.v-1/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/static/plugins/classimax.v-1/plugins/tether/js/tether.min.js"></script>
+    <script src="/static/plugins/classimax.v-1/plugins/raty/jquery.raty-fa.js"></script>
+    <script src="/static/plugins/classimax.v-1/plugins/bootstrap/dist/js/popper.min.js"></script>
+    <script src="/static/plugins/classimax.v-1/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/static/plugins/classimax.v-1/plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+    <script src="/static/plugins/classimax.v-1/plugins/slick-carousel/slick/slick.min.js"></script>
+    <script src="/static/plugins/classimax.v-1/plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="/static/plugins/classimax.v-1/plugins/fancybox/jquery.fancybox.pack.js"></script>
+    <script src="/static/plugins/classimax.v-1/plugins/smoothscroll/SmoothScroll.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script src="/static/plugins/classimax.v-1/js/scripts.js"></script>
 
 {% endblock %}

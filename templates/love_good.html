@@ -1,71 +1,72 @@
 {% extends 'my_good.html' %}
 {% block right %}
-			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
-				<!-- Recently Favorited -->
-				<div class="widget dashboard-container my-adslist">
-					<h3 class="widget-header">我收藏的</h3>
-                    {% for good in good %}
-					<table class="table table-responsive product-dashboard-table">
-						<thead>
-							<tr>
-								<th>闲置</th>
-								<th>闲置描述</th>
-								<th class="text-center">所属闲置类</th>
-								<th class="text-center">可操作</th>
-							</tr>
-						</thead>
-						<tbody>
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+        <!-- Recently Favorited -->
+        <div class="widget dashboard-container my-adslist">
+            <h3 class="widget-header">我收藏的</h3>
+            {% for good in good %}
+                <table class="table table-responsive product-dashboard-table">
+                    <thead>
+                    <tr>
+                        <th>闲置</th>
+                        <th>闲置描述</th>
+                        <th class="text-center">所属闲置类</th>
+                        <th class="text-center">可操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-							<tr>
+                    <tr>
 
-								<td class="product-thumb">
-                                    {% if good.good_id.good_photo %}
-									<img width="80px" height="auto" src={{ good.good_id.good_photo.url }}></td>
-                                        {% else %}
+                        <td class="product-thumb">
+                            {% if good.good_id.good_photo %}
+                                <img width="80px" height="auto" src={{ good.good_id.good_photo.url }}></td>
+                            {% else %}
 
-									<img width="80px" height="auto" src="/static/images/clean.jpeg"></td>
+                                <img width="80px" height="auto" src="/static/images/clean.jpeg"></td>
                             {% endif %}
-								<td class="product-details">
-									<h3 class="title">{{ good.good_id.good_name }}</h3>
-                                <span><strong>价格</strong>{{ good.good_id.price }}</span>
-									<span><strong>浏览数</strong>{{ good.good_id.views }}</span>
-									<span><strong>发布者 </strong><time>{{ good.good_id.starter }}</time> </span>
-                                    {% if  good.good_id.online == 1 %}
-									<span class="status active"><strong>包邮</strong> active </span>
-                                    {% else %}
-									<span class="status active"><strong>包邮</strong> inactive </span>
-                                    {% endif %}
-                                {% if  good.good_id.lower == 1 %}
-									<span class="status active"><strong>议价</strong> active </span>
-                                    {% else %}
-									<span class="status active"><strong>议价</strong> inactive </span>
-                                    {% endif %}
-								</td>
-								<td class="product-category"><span class="categories">{{ good.good_id.plat }}</span></td>
-								<td class="action" data-title="Action">
-									<div class="">
-										<ul class="list-inline justify-content-center">
-											<li class="list-inline-item">
-												<a data-toggle="tooltip" data-placement="top" title="查看详情" class="view" href="/plat/good_{{ good.good_id.id }}/">
-													<i class="fa fa-eye"></i>
-												</a>
-											</li>
-										</ul>
-									</div>
+                        <td class="product-details">
+                            <h3 class="title">{{ good.good_id.good_name }}</h3>
+                            <span><strong>价格</strong>{{ good.good_id.price }}</span>
+                            <span><strong>浏览数</strong>{{ good.good_id.views }}</span>
+                            <span><strong>发布者 </strong><time>{{ good.good_id.starter }}</time> </span>
+                            {% if  good.good_id.online == 1 %}
+                                <span class="status active"><strong>包邮</strong> active </span>
+                            {% else %}
+                                <span class="status active"><strong>包邮</strong> inactive </span>
+                            {% endif %}
+                            {% if  good.good_id.lower == 1 %}
+                                <span class="status active"><strong>议价</strong> active </span>
+                            {% else %}
+                                <span class="status active"><strong>议价</strong> inactive </span>
+                            {% endif %}
+                        </td>
+                        <td class="product-category"><span class="categories">{{ good.good_id.plat }}</span></td>
+                        <td class="action" data-title="Action">
+                            <div class="">
+                                <ul class="list-inline justify-content-center">
+                                    <li class="list-inline-item">
+                                        <a data-toggle="tooltip" data-placement="top" title="查看详情" class="view"
+                                           href="/plat/good_{{ good.good_id.id }}/">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
 
-								</td>
-							</tr>
-						</tbody>
-					</table>
-                    {% empty %}
-                    <p>无收藏闲置</p>
-                    <p>
-                        <a href="/plat/all_goods">  去看看？
-                        </a>
-                    </p>
-                        {% endfor %}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            {% empty %}
+                <p>无收藏闲置</p>
+                <p>
+                    <a href="/plat/all_goods"> 去看看？
+                    </a>
+                </p>
+            {% endfor %}
 
-				</div>
-			</div>
+        </div>
+    </div>
 {% endblock %}
 

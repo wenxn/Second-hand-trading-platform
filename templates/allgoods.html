@@ -2,9 +2,7 @@
 {% load template_tag %}
 
 {% block css %}
-  <link href="/static/plugins/classimax.v-1/css/style.css" rel="stylesheet">
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <link href="/static/plugins/classimax.v-1/css/style.css" rel="stylesheet">
 
 {% endblock %}
 
@@ -12,177 +10,184 @@
 
 {% block content %}
 
-<section class="page-search">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<!-- Advance Search -->
-				<div class="advance-search">
-					<form method="get" action="/plat/all_goods">
-						<div class="form-row">
-                            <div class="form-group col-md-1.5">
-                                {% get_plats %}
-							</div>
-							<div class="form-group col-md-4">
-								<input type="text" class="form-control" name="name" placeholder="查找闲置名称">
-							</div>
-							<div class="form-group col-md-3">
-								<input type="text" class="form-control" name="user" placeholder="发布者">
-							</div>
-							<div class="form-group col-md-2">
-								
-								<button type="submit" class="btn btn-primary">Search Now</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="section-sm">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="search-result bg-gray">
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3">
-				<div class="category-sidebar">
-					<div class="widget category-list">
-	<h4 class="widget-header">闲置类型</h4>
-	<ul class="category-list">
-		<li><a href="/plat/all_goods?plat=书籍教材">书籍教材<span>{{ p_counts.p1 }}</span></a></li>
-		<li><a href="/plat/all_goods?plat=电子设备">电子设备<span>{{ p_counts.p2 }}</span></a></li>
-		<li><a href="/plat/all_goods?plat=生活用品">生活用品<span>{{ p_counts.p3 }}</span></a></li>
-	</ul>
-</div>
+    <section class="page-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advance Search -->
+                    <div class="advance-search">
+                        <form method="get" action="/plat/all_goods">
+                            <div class="form-row">
+                                <div class="form-group col-md-1.5">
+                                    {% get_plats %}
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" name="name" placeholder="查找闲置名称">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <input type="text" class="form-control" name="user" placeholder="发布者">
+                                </div>
+                                <div class="form-group col-md-2">
 
-<div class="widget category-list">
-	<h4 class="widget-header">发布者</h4>
-	<ul class="category-list">
-		<li><a href="#">信息工程学院<span>{{ counts.c1 }}</span></a></li>
-		<li><a href="#">自动化学院 <span>{{ counts.c2 }}</span></a></li>
-		<li><a href="#">计算机学院 <span>{{ counts.c3 }}</span></a></li>
-		<li><a href="#">外国语学院 <span>{{ counts.c4 }}</span></a></li>
-		<li><a href="#">轻化学院 <span>{{ counts.c5 }}</span></a></li>
-		<li><a href="#">物理学院 <span>{{ counts.c6 }}</span></a></li>
-	</ul>
-</div>
-
-<div class="widget product-shorting">
-	<h4 class="widget-header">额外支持</h4>
-	<div class="form-check">
-	  <label class="form-check-label"> <a href="/plat/all_goods?online=1">
-	    <input class="form-check-input" name="online" type="checkbox" >
-	    包邮
-      </a>
-	  </label>
-	</div>
-	<div class="form-check">
-	  <label class="form-check-label"> <a href="/plat/all_goods?lower=1">
-	    <input class="form-check-input" name="argue" type="checkbox" >
-	    议价
-      </a>
-	  </label>
-	</div>
-</div>
-
-				</div>
-			</div>
-			<div class="col-md-9">
-				<div class="category-search-filter">
-					<div class="row">
-						<div class="col-md-6">
-                            <select>
-        <option>最近发布</option>
-        <option value="1">热门物品</option>
-        <option value="2">低价物品</option>
-       </select>
-
-							<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    排序
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="/plat/all_goods?time_order=1">按发布时间</a></li>
-    <li><a href="/plat/all_goods?count_order=1">按浏览次数</a></li>
-    <li><a href="/plat/all_goods?price_order=1">按闲置价格</a></li>
-  </ul>
-</div>
-						</div>
-
-						<div class="col-md-6">
-							<div class="view">
-								<strong>Views</strong>
-								<ul class="list-inline view-switcher">
-									<li class="list-inline-item">
-										<a href="javascript:void(0);"><i class="fa fa-th-large"></i></a>
-									</li>
-									<li class="list-inline-item">
-										<a href="javascript:void(0);"><i class="fa fa-reorder"></i></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="product-grid-list">
-					<div class="row mt-30">
-                        {% for good in goods %}
-						<div class="col-sm-12 col-lg-4 col-md-6">
-<div class="product-item bg-light">
-	<div class="card">
-		<div class="thumb-content">
-			<a href="/plat/good_{{ good.id }}">
-				<img class="card-img-top img-fluid" src={{ good.good_photo.url }}>
-			</a>
-		</div>
-		<div class="card-body">
-		    <h4 class="card-title"><a href="">{{ good.good_name }}</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href=""><i class="fa fa-folder-open-o"></i>{{ good.plat }}</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href=""><i class="fa fa-calendar"></i>{{ good.last_updated }}</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">{{ good.good_description }}</p>
-		    <div class="product-ratings">
-		    	<ul class="list-inline">
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
-		    	</ul>
-		    </div>
-		</div>
-	</div>
-</div>
-						</div>
-                        {% endfor %}
-			</div>
-		</div>
-            <div class="pagination justify-content-center">
-                <nav aria-label="Page navigation example">
-						<ul class="pagination">
-							{{ page_str }}
-						</ul>
-                </nav>
-			</div>
-	</div>
+                                    <button type="submit" class="btn btn-primary">Search Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+    <section class="section-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="search-result bg-gray">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="category-sidebar">
+                        <div class="widget category-list">
+                            <h4 class="widget-header">闲置类型</h4>
+                            <ul class="category-list">
+                                <li><a href="/plat/all_goods?plat=书籍教材">书籍教材<span>{{ p_counts.p1 }}</span></a></li>
+                                <li><a href="/plat/all_goods?plat=电子设备">电子设备<span>{{ p_counts.p2 }}</span></a></li>
+                                <li><a href="/plat/all_goods?plat=生活用品">生活用品<span>{{ p_counts.p3 }}</span></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="widget category-list">
+                            <h4 class="widget-header">发布者</h4>
+                            <ul class="category-list">
+                                <li><a href="#">信息工程学院<span>{{ counts.c1 }}</span></a></li>
+                                <li><a href="#">自动化学院 <span>{{ counts.c2 }}</span></a></li>
+                                <li><a href="#">计算机学院 <span>{{ counts.c3 }}</span></a></li>
+                                <li><a href="#">外国语学院 <span>{{ counts.c4 }}</span></a></li>
+                                <li><a href="#">轻化学院 <span>{{ counts.c5 }}</span></a></li>
+                                <li><a href="#">物理学院 <span>{{ counts.c6 }}</span></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="widget product-shorting">
+                            <h4 class="widget-header">额外支持</h4>
+                            <div class="form-check">
+                                <label class="form-check-label"> <a href="/plat/all_goods?online=1">
+                                    <input class="form-check-input" name="online" type="checkbox">
+                                    包邮
+                                </a>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label"> <a href="/plat/all_goods?lower=1">
+                                    <input class="form-check-input" name="argue" type="checkbox">
+                                    议价
+                                </a>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="category-search-filter">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <select>
+                                    <option>最近发布</option>
+                                    <option value="1">热门物品</option>
+                                    <option value="2">低价物品</option>
+                                </select>
+
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="true">
+                                        排序
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li><a href="/plat/all_goods?time_order=1">按发布时间</a></li>
+                                        <li><a href="/plat/all_goods?count_order=1">按浏览次数</a></li>
+                                        <li><a href="/plat/all_goods?price_order=1">按闲置价格</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="view">
+                                    <strong>Views</strong>
+                                    <ul class="list-inline view-switcher">
+                                        <li class="list-inline-item">
+                                            <a href="javascript:void(0);"><i class="fa fa-th-large"></i></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript:void(0);"><i class="fa fa-reorder"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-grid-list">
+                        <div class="row mt-30">
+                            {% for good in goods %}
+                                <div class="col-sm-12 col-lg-4 col-md-6">
+                                    <div class="product-item bg-light">
+                                        <div class="card">
+                                            <div class="thumb-content">
+                                                <a href="/plat/good_{{ good.id }}">
+                                                    <img class="card-img-top img-fluid" src={{ good.good_photo.url }}>
+                                                </a>
+                                            </div>
+                                            <div class="card-body">
+                                                <h4 class="card-title"><a href="">{{ good.good_name }}</a></h4>
+                                                <ul class="list-inline product-meta">
+                                                    <li class="list-inline-item">
+                                                        <a href=""><i class="fa fa-folder-open-o"></i>{{ good.plat }}
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a href=""><i class="fa fa-calendar"></i>{{ good.last_updated }}
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <p class="card-text">{{ good.good_description }}</p>
+                                                <div class="product-ratings">
+                                                    <ul class="list-inline">
+                                                        <li class="list-inline-item selected"><i class="fa fa-star"></i>
+                                                        </li>
+                                                        <li class="list-inline-item selected"><i class="fa fa-star"></i>
+                                                        </li>
+                                                        <li class="list-inline-item selected"><i class="fa fa-star"></i>
+                                                        </li>
+                                                        <li class="list-inline-item selected"><i class="fa fa-star"></i>
+                                                        </li>
+                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="pagination justify-content-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                {{ page_str }}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
 
 {% block js %}
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-  <script src="/static/plugins/classimax.v-1/js/scripts.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script src="/static/plugins/classimax.v-1/js/scripts.js"></script>
 {% endblock %}

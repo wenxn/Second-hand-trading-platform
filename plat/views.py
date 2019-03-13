@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from django.utils import timezone
 from .models import Plat,Good,Post,love
-from .forms import goods_form
+from .forms import goods_form,ReplyForm
 from plat import models
 from accounts.models import UserInfo
 from django.contrib.auth.decorators import login_required
@@ -119,8 +119,6 @@ def all_good(request):
 
     return render(request, 'allgoods.html', {'goods': goods,"page_str": page_str,'counts':counts,'p_counts':p_counts})
 
-
-
 @login_required
 def plat_goods(request):
     user = request.user
@@ -166,7 +164,6 @@ def edit_goods(request,id):
             print(form.errors)
     return render(request, 'edit_goods.html', {'form': form,'id':id})
 
-
 @login_required
 def del_goods(request,id):
     goods = models.Good.objects.filter(id=id)
@@ -202,12 +199,12 @@ def good_detail(request,id):
         return redirect("/plat/good_%s" % id)
     return render(request, 'good_details.html', {'goods':goods,'userdetail':userdetail,'post_list':post_list,'user_goods':user_goods,'thisgood':good,'fav':fav})
 
-
 def home(request):
     plats = Plat.objects.all()
     good = models.Good.objects.filter()
     return render(request, 'index.html', {'plats': plats,'good':good})
 
+@login_required
 def loved(request,id):
     good = models.Good.objects.filter(id=id).first()
     loved= love()
@@ -218,6 +215,7 @@ def loved(request,id):
     loved.save()
     return redirect("/plat/good_%s" % id)
 
+@login_required
 def unloved(request,id):
     good = models.Good.objects.filter(id=id).first()
     username = request.user
@@ -226,6 +224,7 @@ def unloved(request,id):
     fav.delete()
     return redirect("/plat/good_%s" % id)
 
+@login_required
 def love_goods(request):
     username = request.user
     userdetail = UserInfo.objects.filter(username=username).first()
@@ -238,6 +237,7 @@ def love_goods(request):
        good = fav
     return render(request, 'love_good.html', {'userdetail':userdetail,'goods': goods,'good':good,'fav_self':fav_self,'good_self':good_self})
 
+@login_required
 def my_good(request):
     user = request.user
     user = UserInfo.objects.filter(username=user).first()
@@ -262,4 +262,20 @@ def delete_post(request,id):
 
 def reply_post(request):
     # 二级回复
-    pass
+    comment_id = request.POST.get('comment_id')
+    author_to_id = request.POST.get('author_to_id')
+    if comment_id and author_to_id:
+        try:
+            comment = Post.objects.get(id=comment_id)
+            author_to = UserInfo.objects.get(id=author_to_id)
+            form = ReplyForm(data=request.POST)
+            if form.is_valid():
+                new_reply = form.save(commit=False)
+                new_reply.comment = comment
+                new_reply.author_from = request.user
+                new_reply.author_to = author_to
+                new_reply.save()
+                return JsonResponse({'status': 'ok'})
+        except Post.DoesNotExist or UserInfo.DoesNotExist:
+            return JsonResponse({'status': 'ko'})
+    return JsonResponse({'status': 'ko'})

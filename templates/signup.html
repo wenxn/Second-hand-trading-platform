@@ -1,24 +1,24 @@
 {% extends 'login.html' %}
-  {% block sign %}
-      <form method="post">
-            <div class="box-body ">
-                            {% csrf_token %}
-                            {% for field in form %}
-                             <div class="form-group">
-                                <label for="{{ field.name }}">{{ field.label }}</label>
-                                    {{ field }}
-                            {% if field.errors %}
-                            {{ field.errors.a }}
-                              <button type="button" class="btn btn-block btn-danger btn-xs">{{ field.errors }}</button>
-                            {% endif %}
-                             </div>
-                            {% endfor %}
-          </div>
-          <div class="row">
-              <div class="col-xs-5">
-          <button type="submit" class="btn btn-block btn-flat">注册
-          </button>
+{% block sign %}
+    <form method="post">
+        <div class="box-body ">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.name }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        {{ field.errors.a }}
+                        <button type="button" class="btn btn-block btn-danger btn-xs">{{ field.errors }}</button>
+                    {% endif %}
+                </div>
+            {% endfor %}
         </div>
-          </div>
-            </form>
-  {% endblock %}
+        <div class="row">
+            <div class="col-xs-5">
+                <button type="submit" class="btn btn-block btn-flat">注册
+                </button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

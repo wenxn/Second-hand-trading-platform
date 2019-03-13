@@ -58,11 +58,14 @@ class Post(models.Model):
         return '{0}-{1}'.format(self.created_by, self.created_at.strftime("%Y-%m-%d %H:%M:%S"))
 
 class PostReply(models.Model):
-    content = models.TextField()
-    comment = models.ForeignKey(Post, related_name='comment_replies',on_delete=models.CASCADE)
-    author = models.ForeignKey(UserInfo, related_name='user_comment_replies', null=True, blank=True,on_delete=models.CASCADE)
-    to = models.ForeignKey(UserInfo, related_name='user_replied', null=True, blank=True, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
+    content = models.TextField(verbose_name='回复', null=True, blank=True)
+    comment = models.ForeignKey(Post, verbose_name='评论',on_delete=models.CASCADE)
+    author = models.ForeignKey(UserInfo, verbose_name='被回复者',on_delete=models.CASCADE)
+    to = models.ForeignKey(UserInfo, related_name='回复者', on_delete=models.CASCADE)
+    created_at = models.DateTimeField(verbose_name='回复时间',auto_now_add=True)
+
+    class Meta:
+        ordering = ['created_at']
 
     def __str__(self):
         return '{0}->{1}'.format(self.author, self.to)

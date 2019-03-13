@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm,TextInput,Select,FileInput
-from .models import Post, Good
+from .models import Post, Good,PostReply
 from accounts.models import UserInfo
 
 '''
@@ -39,4 +39,13 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ['message' ]
+
+
+class ReplyForm(forms.ModelForm):
+
+    class Meta:
+        model = PostReply
+        fields = ['content']
+        widgets = {'content': forms.Textarea(attrs={'rows': 3, 'placeholder': '写下你的回复...'})}
+
 
